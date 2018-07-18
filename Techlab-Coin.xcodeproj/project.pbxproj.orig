@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09562D5C20EF46B80009A8C0 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09562D5B20EF46B80009A8C0 /* Wallet.swift */; };
+		09562D6020EF4E8E0009A8C0 /* WalletTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09562D5E20EF4E8E0009A8C0 /* WalletTableViewCell.swift */; };
+		09562D6120EF4E8E0009A8C0 /* WalletTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09562D5F20EF4E8E0009A8C0 /* WalletTableViewCell.xib */; };
+<<<<<<< HEAD
+=======
+		0957DA6520F903350028766C /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DA6420F903350028766C /* NavigationController.swift */; };
+		0957DA6A20FA16670028766C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DA6920FA16670028766C /* SignInViewController.swift */; };
+		0957DA6C20FA52BF0028766C /* Gmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DA6B20FA52BF0028766C /* Gmail.swift */; };
+		0957DA6E20FA52D90028766C /* Twitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DA6D20FA52D90028766C /* Twitter.swift */; };
+		0957DA7020FA52F70028766C /* Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DA6F20FA52F70028766C /* Facebook.swift */; };
+		0957DA7220FA53390028766C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DA7120FA53390028766C /* Reachability.swift */; };
+		09653C9C20FAD8CC00D3FC5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09653C9B20FAD8CC00D3FC5E /* GoogleService-Info.plist */; };
+		09653C9F20FB2F2400D3FC5E /* SocialUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09653C9E20FB2F2400D3FC5E /* SocialUser.swift */; };
+>>>>>>> 0f384770438bbd73b5aa19ee26bc40046e6f8c2d
+		09906A2C20E61F8B00C06D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09906A2B20E61F8B00C06D69 /* AppDelegate.swift */; };
+		09906A2E20E61F8B00C06D69 /* WalletsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09906A2D20E61F8B00C06D69 /* WalletsViewController.swift */; };
+		09906A3120E61F8B00C06D69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09906A2F20E61F8B00C06D69 /* Main.storyboard */; };
+		09906A3320E61F9000C06D69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09906A3220E61F9000C06D69 /* Assets.xcassets */; };
+		09906A3620E61F9000C06D69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09906A3420E61F9000C06D69 /* LaunchScreen.storyboard */; };
+		09906A3E20E6204F00C06D69 /* PriceHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09906A3D20E6204F00C06D69 /* PriceHistoryViewController.swift */; };
+		09906A4220E6242600C06D69 /* EthServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09906A4120E6242600C06D69 /* EthServiceRequest.swift */; };
+		09C1485120F88FFA0025CC76 /* AccountDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1485020F88FFA0025CC76 /* AccountDetailViewController.swift */; };
+		09C1485320F89C990025CC76 /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1485220F89C990025CC76 /* SendViewController.swift */; };
+		4F4D393D4BC2ECEDDEDC82D2 /* Pods_Techlab_Coin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82BB8B0D5457F16C62FC8A04 /* Pods_Techlab_Coin.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		04E05706BE5EF024F67657AB /* Pods-Techlab-Coin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Techlab-Coin.release.xcconfig"; path = "Pods/Target Support Files/Pods-Techlab-Coin/Pods-Techlab-Coin.release.xcconfig"; sourceTree = "<group>"; };
+		09562D5B20EF46B80009A8C0 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		09562D5E20EF4E8E0009A8C0 /* WalletTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTableViewCell.swift; sourceTree = "<group>"; };
+		09562D5F20EF4E8E0009A8C0 /* WalletTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletTableViewCell.xib; sourceTree = "<group>"; };
+<<<<<<< HEAD
+=======
+		0957DA6420F903350028766C /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		0957DA6920FA16670028766C /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		0957DA6B20FA52BF0028766C /* Gmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gmail.swift; sourceTree = "<group>"; };
+		0957DA6D20FA52D90028766C /* Twitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twitter.swift; sourceTree = "<group>"; };
+		0957DA6F20FA52F70028766C /* Facebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Facebook.swift; sourceTree = "<group>"; };
+		0957DA7120FA53390028766C /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		09653C9B20FAD8CC00D3FC5E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		09653C9E20FB2F2400D3FC5E /* SocialUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialUser.swift; sourceTree = "<group>"; };
+>>>>>>> 0f384770438bbd73b5aa19ee26bc40046e6f8c2d
+		09906A2820E61F8B00C06D69 /* Techlab-Coin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Techlab-Coin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		09906A2B20E61F8B00C06D69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		09906A2D20E61F8B00C06D69 /* WalletsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsViewController.swift; sourceTree = "<group>"; };
+		09906A3020E61F8B00C06D69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		09906A3220E61F9000C06D69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		09906A3520E61F9000C06D69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		09906A3720E61F9000C06D69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09906A3D20E6204F00C06D69 /* PriceHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceHistoryViewController.swift; sourceTree = "<group>"; };
+		09906A4120E6242600C06D69 /* EthServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthServiceRequest.swift; sourceTree = "<group>"; };
+		09C1485020F88FFA0025CC76 /* AccountDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailViewController.swift; sourceTree = "<group>"; };
+		09C1485220F89C990025CC76 /* SendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
+		82BB8B0D5457F16C62FC8A04 /* Pods_Techlab_Coin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Techlab_Coin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F59BEFFC9D0739DC28A211D6 /* Pods-Techlab-Coin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Techlab-Coin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Techlab-Coin/Pods-Techlab-Coin.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		09906A2520E61F8B00C06D69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F4D393D4BC2ECEDDEDC82D2 /* Pods_Techlab_Coin.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09562D5A20EF46A60009A8C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+<<<<<<< HEAD
+				09562D5B20EF46B80009A8C0 /* Wallet.swift */,
+=======
+				09653C9D20FB2EEA00D3FC5E /* Parses */,
+				0957DA6B20FA52BF0028766C /* Gmail.swift */,
+				09653C9B20FAD8CC00D3FC5E /* GoogleService-Info.plist */,
+				0957DA6D20FA52D90028766C /* Twitter.swift */,
+				0957DA6F20FA52F70028766C /* Facebook.swift */,
+				0957DA7120FA53390028766C /* Reachability.swift */,
+>>>>>>> 0f384770438bbd73b5aa19ee26bc40046e6f8c2d
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		09562D5D20EF4E7C0009A8C0 /* Xib */ = {
+			isa = PBXGroup;
+			children = (
+				09562D5E20EF4E8E0009A8C0 /* WalletTableViewCell.swift */,
+				09562D5F20EF4E8E0009A8C0 /* WalletTableViewCell.xib */,
+			);
+			path = Xib;
+			sourceTree = "<group>";
+		};
+<<<<<<< HEAD
+=======
+		09653C9D20FB2EEA00D3FC5E /* Parses */ = {
+			isa = PBXGroup;
+			children = (
+				09562D5B20EF46B80009A8C0 /* Wallet.swift */,
+				09653C9E20FB2F2400D3FC5E /* SocialUser.swift */,
+			);
+			path = Parses;
+			sourceTree = "<group>";
+		};
+>>>>>>> 0f384770438bbd73b5aa19ee26bc40046e6f8c2d
+		09906A1F20E61F8B00C06D69 = {
+			isa = PBXGroup;
+			children = (
+				09906A2A20E61F8B00C06D69 /* Techlab-Coin */,
+				09906A2920E61F8B00C06D69 /* Products */,
+				14420BFE38850B5EF9C147D9 /* Pods */,
+				0D7FB9813658FD25DF75F91A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		09906A2920E61F8B00C06D69 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				09906A2820E61F8B00C06D69 /* Techlab-Coin.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		09906A2A20E61F8B00C06D69 /* Techlab-Coin */ = {
+			isa = PBXGroup;
+			children = (
+				09562D5A20EF46A60009A8C0 /* Model */,
+				09906A4020E6235000C06D69 /* API */,
+				09906A3F20E6206200C06D69 /* Views */,
+				09906A2B20E61F8B00C06D69 /* AppDelegate.swift */,
+				09906A2F20E61F8B00C06D69 /* Main.storyboard */,
+				09906A3220E61F9000C06D69 /* Assets.xcassets */,
+				09906A3420E61F9000C06D69 /* LaunchScreen.storyboard */,
+				09906A3720E61F9000C06D69 /* Info.plist */,
+				0957DA6420F903350028766C /* NavigationController.swift */,
+			);
+			path = "Techlab-Coin";
+			sourceTree = "<group>";
+		};
+		09906A3F20E6206200C06D69 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				09562D5D20EF4E7C0009A8C0 /* Xib */,
+				09906A2D20E61F8B00C06D69 /* WalletsViewController.swift */,
+				09906A3D20E6204F00C06D69 /* PriceHistoryViewController.swift */,
+				09C1485020F88FFA0025CC76 /* AccountDetailViewController.swift */,
+				09C1485220F89C990025CC76 /* SendViewController.swift */,
+<<<<<<< HEAD
+=======
+				0957DA6920FA16670028766C /* SignInViewController.swift */,
+>>>>>>> 0f384770438bbd73b5aa19ee26bc40046e6f8c2d
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		09906A4020E6235000C06D69 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				09906A4120E6242600C06D69 /* EthServiceRequest.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		0D7FB9813658FD25DF75F91A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82BB8B0D5457F16C62FC8A04 /* Pods_Techlab_Coin.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		14420BFE38850B5EF9C147D9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F59BEFFC9D0739DC28A211D6 /* Pods-Techlab-Coin.debug.xcconfig */,
+				04E05706BE5EF024F67657AB /* Pods-Techlab-Coin.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		09906A2720E61F8B00C06D69 /* Techlab-Coin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 09906A3A20E61F9000C06D69 /* Build configuration list for PBXNativeTarget "Techlab-Coin" */;
+			buildPhases = (
+				82EDAC0262CB95410A1658D0 /* [CP] Check Pods Manifest.lock */,
+				09906A2420E61F8B00C06D69 /* Sources */,
+				09906A2520E61F8B00C06D69 /* Frameworks */,
+				09906A2620E61F8B00C06D69 /* Resources */,
+				A30908DB5EC2B3A2817C584D /* [CP] Embed Pods Frameworks */,
+				6F77837C74427C8A8A7AAD35 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Techlab-Coin";
+			productName = "Techlab-Coin";
+			productReference = 09906A2820E61F8B00C06D69 /* Techlab-Coin.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		09906A2020E61F8B00C06D69 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Hoang Trong Anh";
+				TargetAttributes = {
+					09906A2720E61F8B00C06D69 = {
+						CreatedOnToolsVersion = 9.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 09906A2320E61F8B00C06D69 /* Build configuration list for PBXProject "Techlab-Coin" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 09906A1F20E61F8B00C06D69;
+			productRefGroup = 09906A2920E61F8B00C06D69 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				09906A2720E61F8B00C06D69 /* Techlab-Coin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		09906A2620E61F8B00C06D69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09562D6120EF4E8E0009A8C0 /* WalletTableViewCell.xib in Resources */,
+				09906A3620E61F9000C06D69 /* LaunchScreen.storyboard in Resources */,
+				09653C9C20FAD8CC00D3FC5E /* GoogleService-Info.plist in Resources */,
+				09906A3320E61F9000C06D69 /* Assets.xcassets in Resources */,
+				09906A3120E61F8B00C06D69 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6F77837C74427C8A8A7AAD35 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Techlab-Coin/Pods-Techlab-Coin-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Techlab-Coin/Pods-Techlab-Coin-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82EDAC0262CB95410A1658D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Techlab-Coin-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A30908DB5EC2B3A2817C584D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Techlab-Coin/Pods-Techlab-Coin-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/APIKit/APIKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/ESTabBarController-swift/ESTabBarController_swift.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/JSONRPCKit/JSONRPCKit.framework",
+<<<<<<< HEAD
+=======
+				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
+>>>>>>> 0f384770438bbd73b5aa19ee26bc40046e6f8c2d
+				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APIKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESTabBarController_swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONRPCKit.framework",
+<<<<<<< HEAD
+=======
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
+>>>>>>> 0f384770438bbd73b5aa19ee26bc40046e6f8c2d
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Techlab-Coin/Pods-Techlab-Coin-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		09906A2420E61F8B00C06D69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+<<<<<<< HEAD
+=======
+				0957DA7220FA53390028766C /* Reachability.swift in Sources */,
+>>>>>>> 0f384770438bbd73b5aa19ee26bc40046e6f8c2d
+				09C1485120F88FFA0025CC76 /* AccountDetailViewController.swift in Sources */,
+				09562D6020EF4E8E0009A8C0 /* WalletTableViewCell.swift in Sources */,
+				09562D5C20EF46B80009A8C0 /* Wallet.swift in Sources */,
+				09906A3E20E6204F00C06D69 /* PriceHistoryViewController.swift in Sources */,
+<<<<<<< HEAD
+				09C1485320F89C990025CC76 /* SendViewController.swift in Sources */,
+=======
+				0957DA6520F903350028766C /* NavigationController.swift in Sources */,
+				0957DA7020FA52F70028766C /* Facebook.swift in Sources */,
+				0957DA6C20FA52BF0028766C /* Gmail.swift in Sources */,
+				09653C9F20FB2F2400D3FC5E /* SocialUser.swift in Sources */,
+				09C1485320F89C990025CC76 /* SendViewController.swift in Sources */,
+				0957DA6E20FA52D90028766C /* Twitter.swift in Sources */,
+>>>>>>> 0f384770438bbd73b5aa19ee26bc40046e6f8c2d
+				09906A4220E6242600C06D69 /* EthServiceRequest.swift in Sources */,
+				09906A2E20E61F8B00C06D69 /* WalletsViewController.swift in Sources */,
+				0957DA6A20FA16670028766C /* SignInViewController.swift in Sources */,
+				09906A2C20E61F8B00C06D69 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		09906A2F20E61F8B00C06D69 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				09906A3020E61F8B00C06D69 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		09906A3420E61F9000C06D69 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				09906A3520E61F9000C06D69 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		09906A3820E61F9000C06D69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		09906A3920E61F9000C06D69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		09906A3B20E61F9000C06D69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F59BEFFC9D0739DC28A211D6 /* Pods-Techlab-Coin.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4G8LPTNB77;
+				INFOPLIST_FILE = "Techlab-Coin/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.techlab.coin.Techlab-Coin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		09906A3C20E61F9000C06D69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04E05706BE5EF024F67657AB /* Pods-Techlab-Coin.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4G8LPTNB77;
+				INFOPLIST_FILE = "Techlab-Coin/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.techlab.coin.Techlab-Coin";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		09906A2320E61F8B00C06D69 /* Build configuration list for PBXProject "Techlab-Coin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09906A3820E61F9000C06D69 /* Debug */,
+				09906A3920E61F9000C06D69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		09906A3A20E61F9000C06D69 /* Build configuration list for PBXNativeTarget "Techlab-Coin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				09906A3B20E61F9000C06D69 /* Debug */,
+				09906A3C20E61F9000C06D69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 09906A2020E61F8B00C06D69 /* Project object */;
+}

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="111" id="KGk-i7-Jjw" customClass="WalletTableViewCell" customModule="Techlab_Coin" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="378" height="111"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="378" height="110.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eL-h3-WiL">
+                        <rect key="frame" x="21" y="45" width="336" height="24"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2u-rl-Fhb">
+                        <rect key="frame" x="21" y="77" width="65" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="65" id="qCu-Af-yHk"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hoang Trong Anh" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgg-w6-Knx">
+                        <rect key="frame" x="21" y="16" width="142.5" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="30/1/2018" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q12-oi-18s">
+                        <rect key="frame" x="176.5" y="16" width="162.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxX-cL-c1F">
+                        <rect key="frame" x="91" y="77" width="282" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="1" green="0.32156862749999998" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vgr-ka-4Ql">
+                        <rect key="frame" x="347" y="16" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="7Q5-T0-50s"/>
+                            <constraint firstAttribute="height" constant="20" id="93g-vn-r9E"/>
+                        </constraints>
+                        <state key="normal" image="lock"/>
+                        <connections>
+                            <action selector="lock:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Rh1-9Q-05m"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="0eL-h3-WiL" firstAttribute="top" secondItem="Hgg-w6-Knx" secondAttribute="bottom" constant="8" id="834-kp-8z9"/>
+                    <constraint firstItem="kxX-cL-c1F" firstAttribute="centerY" secondItem="I2u-rl-Fhb" secondAttribute="centerY" id="BgJ-6u-CLY"/>
+                    <constraint firstItem="vgr-ka-4Ql" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="Cw7-85-qtT"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="0eL-h3-WiL" secondAttribute="trailing" constant="5" id="DP3-jM-JjZ"/>
+                    <constraint firstItem="vgr-ka-4Ql" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="5" id="DTi-go-Xqz"/>
+                    <constraint firstItem="I2u-rl-Fhb" firstAttribute="leading" secondItem="0eL-h3-WiL" secondAttribute="leading" id="E1I-OS-9JN"/>
+                    <constraint firstItem="q12-oi-18s" firstAttribute="centerY" secondItem="Hgg-w6-Knx" secondAttribute="centerY" id="OSf-UC-Ff0"/>
+                    <constraint firstItem="I2u-rl-Fhb" firstAttribute="top" secondItem="0eL-h3-WiL" secondAttribute="bottom" constant="8" id="OxI-jw-N3T"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="I2u-rl-Fhb" secondAttribute="bottom" constant="5" id="SU6-m2-MZ5"/>
+                    <constraint firstItem="vgr-ka-4Ql" firstAttribute="leading" secondItem="q12-oi-18s" secondAttribute="trailing" constant="8" id="TIf-nw-0vI"/>
+                    <constraint firstItem="q12-oi-18s" firstAttribute="leading" secondItem="Hgg-w6-Knx" secondAttribute="trailing" constant="13" id="UI0-2A-GeH"/>
+                    <constraint firstAttribute="trailing" secondItem="kxX-cL-c1F" secondAttribute="trailing" constant="5" id="huV-ww-WN4"/>
+                    <constraint firstItem="Hgg-w6-Knx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="p4C-Wp-dEc"/>
+                    <constraint firstItem="kxX-cL-c1F" firstAttribute="leading" secondItem="I2u-rl-Fhb" secondAttribute="trailing" constant="5" id="skO-zD-D4m"/>
+                    <constraint firstItem="0eL-h3-WiL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="5" id="svz-1z-Uaw"/>
+                    <constraint firstItem="Hgg-w6-Knx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="zM0-S2-1bG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="address" destination="0eL-h3-WiL" id="y3O-sJ-RdX"/>
+                <outlet property="balance" destination="kxX-cL-c1F" id="sQa-jh-RBa"/>
+                <outlet property="createdAt" destination="q12-oi-18s" id="S9s-xI-PlT"/>
+                <outlet property="name" destination="Hgg-w6-Knx" id="kNx-zJ-oxV"/>
+                <outlet property="status" destination="vgr-ka-4Ql" id="Eg9-hd-bFN"/>
+            </connections>
+            <point key="canvasLocation" x="54" y="85.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="lock" width="16" height="16"/>
+    </resources>
+</document>

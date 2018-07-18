@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>272870193447-q42jhfh6msp4bgrppf8pn8tf0fh8b0b2.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.272870193447-q42jhfh6msp4bgrppf8pn8tf0fh8b0b2</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA0KfRA3pQ3aj0_hDqUyi6ffl3g-kMPLc4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>272870193447</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.techlab.coin.Techlab-Coin</string>
+	<key>PROJECT_ID</key>
+	<string>techlab-2f840</string>
+	<key>STORAGE_BUCKET</key>
+	<string>techlab-2f840.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:272870193447:ios:e4791547a806000a</string>
+	<key>DATABASE_URL</key>
+	<string>https://techlab-2f840.firebaseio.com</string>
+</dict>
+</plist>
