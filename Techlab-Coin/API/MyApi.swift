@@ -11,18 +11,19 @@ import Moya
 
 enum MyApi {
     case newAccount(passwd: String, name: String, email: String, type: Int)
-    case accounts
+    case accounts(email: String, type: Int)
+    case getBalance(address: String)
 }
 
 extension MyApi: TargetType {
     
-    var baseURL: URL { return URL(string: "http://192.168.0.194:9001")! }
+    var baseURL: URL { return URL(string: "http://192.168.0.196:9001")! }
     
     var method: Moya.Method {
         switch self {
         case .newAccount:
-                return .post
-        case .accounts:
+            return .post
+        case .accounts, .getBalance:
             return .get
         }
     }
@@ -33,11 +34,17 @@ extension MyApi: TargetType {
             return "/newAccount"
         case .accounts:
             return "/accounts"
+        case .getBalance:
+            return "/getBalance"
         }
     }
     
     var parameterEncoding:ParameterEncoding {
-        return URLEncoding.queryString
+        switch self {
+        case .newAccount, .accounts, .getBalance:
+            return URLEncoding.queryString
+        }
+        
     }
     
     var parameters: [String: Any]? {
@@ -50,13 +57,26 @@ extension MyApi: TargetType {
             params["type"] = type
             
             return params
-        case .accounts:
-            return nil
+        case .accounts(let email, let type):
+            params["email"] = email
+            params["type"] = type
+            
+            return params
+        case .getBalance(let address):
+            params["address"] = address
+            
+            return params
         }
     }
     
     var headers: [String : String]? {
         return ["Content-Type": "application/x-www-form-urlencoded"]
+//        switch self {
+//        case .newAccount:
+//            return ["Content-Type": "application/x-www-form-urlencoded"]
+//        case .accounts:
+//            return ["Content-Type": "application/json"]
+//        }
     }
     
     var sampleData: Data {
@@ -65,13 +85,10 @@ extension MyApi: TargetType {
     
     var task: Task {
         switch self {
-        case .newAccount:
+        case .newAccount, .accounts, .getBalance:
             if let _ = self.parameters {
                 return .requestParameters(parameters: self.parameters!, encoding: parameterEncoding)
             }
-            
-            return .requestPlain
-        default:
             return .requestPlain
         }
     }

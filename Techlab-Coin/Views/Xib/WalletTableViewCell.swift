@@ -30,6 +30,7 @@ class WalletTableViewCell: UITableViewCell {
     
     func update(wallet: Wallet?) {
         if let wallet = wallet {
+            self.name.text = wallet.name
             self.address.text = wallet.address
             self.address.textColor = .red
             self.address.adjustsFontSizeToFitWidth = true

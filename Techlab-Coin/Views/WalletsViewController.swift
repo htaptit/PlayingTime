@@ -10,6 +10,7 @@ import UIKit
 import APIKit
 import JSONRPCKit
 import SJSegmentedScrollView
+import Unbox
 
 class WalletsViewController: UIViewController {
     
@@ -19,6 +20,8 @@ class WalletsViewController: UIViewController {
     let batchFactory = BatchFactory(version: "2.0", idGenerator: NumberIdGenerator())
     
     var wallets: [Wallet] = []
+    
+    var users: MyApiUsers?
     
     var isCreateQRCode: Bool = false
     
@@ -42,30 +45,25 @@ class WalletsViewController: UIViewController {
         self.tableView.register(UINib(nibName: "WalletTableViewCell", bundle: nil), forCellReuseIdentifier: "WalletTableViewCell")
     }
     
-    private func getBalanceAccount(byAddress: String) {
-        
-    }
-    
     private func getAccounts() {
-        let request = EthGetAccounts()
+        let target = MyApi.accounts(email: "htaptit@gmail.com", type: 1)
         
-        let batch = batchFactory.create(request)
-        let httpRequest = EthServiceRequest(batch: batch)
-        
-        Session.send(httpRequest, callbackQueue: nil) { (result) in
-            switch result {
-            case .success(let result):
-                for address in result {
-                    let wallet: Wallet = Wallet(address: address, balance: nil)
-                    self.wallets.append(wallet)
-                }
+        MyApiAdap.request(target: target, success: { (succes) in
+            do {
+                let data: MyApiUsers = try unbox(data: succes.data)
                 
+                self.users = data
+
                 self.getBalance {
                     self.tableView.reloadData()
                 }
-            case .failure(let error):
-                print(error)
+            } catch {
+                
             }
+        }, error: { (error) in
+            debugPrint(error)
+        }) { (fail) in
+            debugPrint(fail)
         }
         
     }
@@ -76,26 +74,28 @@ class WalletsViewController: UIViewController {
             
             var errorOccurred = false
             
-            for (index, wallet) in self.wallets.enumerated() {
+            for (index, user) in self.users!.accounts.enumerated() {
                 multiTask.enter()
-                
-                let request = EthGetBalance(address: wallet.address, quantity: "latest")
-                
-                let batch = self.batchFactory.create(request)
-                let httpRequest = EthServiceRequest(batch: batch)
-                
-                Session.send(httpRequest, callbackQueue: nil) { (result) in
-                    switch result {
-                    case .success(let result):
-                        self.wallets[index].balance = result
+
+                MyApiAdap.request(target: MyApi.getBalance(address: user.address), success: { (succes) in
+                    do {
+                        let balance: MyApiBalance = try unbox(data: succes.data)
                         
-                        multiTask.leave()
-                    case .failure(let error):
-                        debugPrint(error)
-                        errorOccurred = true
-                        multiTask.leave()
+                        self.wallets.append(Wallet(name: self.users!.accounts[index].name, datetime: self.users!.accounts[index].datetime, address: self.users!.accounts[index].address, balance: balance.balance))
+                    } catch {
+                        
                     }
-                }
+                    
+                     multiTask.leave()
+                }, error: { (error) in
+                    
+                    errorOccurred = true
+                    multiTask.leave()
+                }, failure: { (fail) in
+                    
+                    errorOccurred = true
+                    multiTask.leave()
+                })
                 
                 // wait until entered task complete
                 multiTask.wait()

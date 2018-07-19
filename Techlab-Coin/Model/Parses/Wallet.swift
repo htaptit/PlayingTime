@@ -9,6 +9,8 @@
 import Foundation
 
 struct Wallet {
+    var name: String
+    var datetime: Date
     var address: String
     var balance: String?
 }

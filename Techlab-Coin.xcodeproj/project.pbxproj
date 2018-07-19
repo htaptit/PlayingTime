@@ -31,6 +31,10 @@
 		09906A3620E61F9000C06D69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09906A3420E61F9000C06D69 /* LaunchScreen.storyboard */; };
 		09906A3E20E6204F00C06D69 /* PriceHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09906A3D20E6204F00C06D69 /* PriceHistoryViewController.swift */; };
 		09906A4220E6242600C06D69 /* EthServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09906A4120E6242600C06D69 /* EthServiceRequest.swift */; };
+		09B69D832100A32500313BBD /* MyApiUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B69D822100A32500313BBD /* MyApiUser.swift */; };
+		09B69D852100A3A700313BBD /* MyApiUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B69D842100A3A700313BBD /* MyApiUsers.swift */; };
+		09B69D872100B3CF00313BBD /* UnboxerDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B69D862100B3CF00313BBD /* UnboxerDateFormatter.swift */; };
+		09B69D892100B9AA00313BBD /* MyApiBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B69D882100B9AA00313BBD /* MyApiBalance.swift */; };
 		09C1485120F88FFA0025CC76 /* AccountDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1485020F88FFA0025CC76 /* AccountDetailViewController.swift */; };
 		09C1485320F89C990025CC76 /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1485220F89C990025CC76 /* SendViewController.swift */; };
 		09C9153220FC88A00038729D /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C9153120FC88A00038729D /* HeaderViewController.swift */; };
@@ -67,6 +71,10 @@
 		09906A3720E61F9000C06D69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09906A3D20E6204F00C06D69 /* PriceHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceHistoryViewController.swift; sourceTree = "<group>"; };
 		09906A4120E6242600C06D69 /* EthServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthServiceRequest.swift; sourceTree = "<group>"; };
+		09B69D822100A32500313BBD /* MyApiUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiUser.swift; sourceTree = "<group>"; };
+		09B69D842100A3A700313BBD /* MyApiUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiUsers.swift; sourceTree = "<group>"; };
+		09B69D862100B3CF00313BBD /* UnboxerDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnboxerDateFormatter.swift; sourceTree = "<group>"; };
+		09B69D882100B9AA00313BBD /* MyApiBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiBalance.swift; sourceTree = "<group>"; };
 		09C1485020F88FFA0025CC76 /* AccountDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailViewController.swift; sourceTree = "<group>"; };
 		09C1485220F89C990025CC76 /* SendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
 		09C9153120FC88A00038729D /* HeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +101,7 @@
 			children = (
 				090AA05320FC596400065A83 /* UIColor.swift */,
 				097350E420FD8DE90049825D /* UIViewController.swift */,
+				09B69D862100B3CF00313BBD /* UnboxerDateFormatter.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -126,6 +135,9 @@
 				09653C9E20FB2F2400D3FC5E /* SocialUser.swift */,
 				090AA05520FC716E00065A83 /* TwitterData.swift */,
 				090AA05720FC826800065A83 /* FacebookData.swift */,
+				09B69D822100A32500313BBD /* MyApiUser.swift */,
+				09B69D842100A3A700313BBD /* MyApiUsers.swift */,
+				09B69D882100B9AA00313BBD /* MyApiBalance.swift */,
 			);
 			path = Parses;
 			sourceTree = "<group>";
@@ -388,7 +400,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0957DA7220FA53390028766C /* Reachability.swift in Sources */,
+				09B69D852100A3A700313BBD /* MyApiUsers.swift in Sources */,
 				09C1485120F88FFA0025CC76 /* AccountDetailViewController.swift in Sources */,
+				09B69D832100A32500313BBD /* MyApiUser.swift in Sources */,
+				09B69D872100B3CF00313BBD /* UnboxerDateFormatter.swift in Sources */,
 				09562D6020EF4E8E0009A8C0 /* WalletTableViewCell.swift in Sources */,
 				090AA05620FC716E00065A83 /* TwitterData.swift in Sources */,
 				09562D5C20EF46B80009A8C0 /* Wallet.swift in Sources */,
@@ -411,6 +426,7 @@
 				09C9153220FC88A00038729D /* HeaderViewController.swift in Sources */,
 				0957DA6A20FA16670028766C /* SignInViewController.swift in Sources */,
 				09906A2C20E61F8B00C06D69 /* AppDelegate.swift in Sources */,
+				09B69D892100B9AA00313BBD /* MyApiBalance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
