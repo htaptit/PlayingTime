@@ -9,6 +9,7 @@
 import UIKit
 import SDWebImage
 import SJSegmentedScrollView
+import Unbox
 
 class HomeViewController: UIViewController {
     
@@ -19,6 +20,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var email: UILabel!
     @IBOutlet weak var typeImage: UIImageView!
+    
+    var wallets: [Wallet] = []
+    
+    var users: MyApiUsers?
     
     let segmentedViewController = SJSegmentedViewController()
     var selectedSegment: SJSegmentTab?
@@ -52,7 +57,11 @@ class HomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.setupNavigationBar()
+        
         self.setupSJSEgment()
+        
+        self.getAccounts()
+        
         setNeedsStatusBarAppearanceUpdate()
     }
     
@@ -77,15 +86,6 @@ class HomeViewController: UIViewController {
         
         //Set height for segmentview.
         segmentedViewController.segmentViewHeight = 39.0
-        
-//        //Set color for selected segment.
-//        segmentedViewController.selectedSegmentViewColor = UIColor(hex: AppColor.accentColor, alpha: 1.0)
-//
-//        //Set color for segment title.
-//        segmentedViewController.segmentTitleColor = UIColor(hex: AppColor.primaryColor, alpha: 1.0)
-//
-//        //Set background color for segmentview.
-//        segmentedViewController.segmentBackgroundColor = UIColor(hex: AppColor.dividerColor, alpha: 1.0)
         
         //Set shadow for segmentview.
         segmentedViewController.segmentShadow = SJShadow(offset: .zero, color: .white, radius: 0, opacity: 0)
@@ -158,10 +158,78 @@ class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor(hex: "#16A2A4", alpha: 1.0)
     }
     
+    private func getAccounts() {
+        let target = MyApi.accounts(email: "htaptit@gmail.com", type: 1)
+        
+        MyApiAdap.request(target: target, success: { (succes) in
+            do {
+                let data: MyApiUsers = try unbox(data: succes.data)
+                
+                self.users = data
+                
+                self.getBalance {
+                    self.walletsTab?.wallets = self.wallets
+                }
+            } catch {
+                
+            }
+        }, error: { (error) in
+            debugPrint(error)
+        }) { (fail) in
+            debugPrint(fail)
+        }
+        
+    }
+    
+    private func getBalance(complete: @escaping () -> ()) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            let multiTask = DispatchGroup()
+            
+            var errorOccurred = false
+            
+            for (index, user) in self.users!.accounts.enumerated() {
+                multiTask.enter()
+                
+                MyApiAdap.request(target: MyApi.getBalance(address: user.address), success: { (succes) in
+                    do {
+                        let balance: MyApiBalance = try unbox(data: succes.data)
+                        
+                        self.wallets.append(Wallet(name: self.users!.accounts[index].name, datetime: self.users!.accounts[index].datetime, address: self.users!.accounts[index].address, balance: balance.balance))
+                    } catch {
+                        
+                    }
+                    
+                    multiTask.leave()
+                }, error: { (error) in
+                    
+                    errorOccurred = true
+                    multiTask.leave()
+                }, failure: { (fail) in
+                    
+                    errorOccurred = true
+                    multiTask.leave()
+                })
+                
+                // wait until entered task complete
+                multiTask.wait()
+                
+                // breaking out of the loop if an error has occurred
+                if errorOccurred { break }
+            }
+            
+            if !errorOccurred {
+                DispatchQueue.main.async {
+                    complete()
+                }
+            }
+        }
+    }
+    
     @objc func goToWalletsViewController() {
         let main  = UIStoryboard(name: "Main", bundle: nil)
         if let vc = main.instantiateViewController(withIdentifier: "WalletsViewController") as? WalletsViewController {
             vc.isCreateQRCode = true
+            vc.wallets = self.wallets
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

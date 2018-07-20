@@ -43,6 +43,8 @@ class WalletTableViewCell: UITableViewCell {
             }
             
             self.balance.adjustsFontSizeToFitWidth = true
+            
+            self.createdAt.text = UnboxDateFormater.date(format: "eee MMM dd . hh").string(from: wallet.datetime) + " (hour)"
         }
     }
     

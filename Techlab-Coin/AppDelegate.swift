@@ -14,17 +14,24 @@ import FirebaseCore
 import Google
 import GoogleSignIn
 import Fabric
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // config keyboard
+        
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = true
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        
         // Override point for customization after application launch.
         application.statusBarStyle = .lightContent
         
         FIRApp.configure()
-//        'You must specify |clientID| for |GIDSignIn|'
+
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         

@@ -13,6 +13,8 @@ enum MyApi {
     case newAccount(passwd: String, name: String, email: String, type: Int)
     case accounts(email: String, type: Int)
     case getBalance(address: String)
+    case sendTransaction(from: String, to: String, value: String, passwd: String)
+    case getTransactionCount(addr: String)
 }
 
 extension MyApi: TargetType {
@@ -21,9 +23,9 @@ extension MyApi: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .newAccount:
+        case .newAccount, .sendTransaction:
             return .post
-        case .accounts, .getBalance:
+        case .accounts, .getBalance, .getTransactionCount:
             return .get
         }
     }
@@ -36,12 +38,16 @@ extension MyApi: TargetType {
             return "/accounts"
         case .getBalance:
             return "/getBalance"
+        case .sendTransaction:
+            return "/sendTransaction"
+        case .getTransactionCount:
+            return "/getTransactionCount"
         }
     }
     
     var parameterEncoding:ParameterEncoding {
         switch self {
-        case .newAccount, .accounts, .getBalance:
+        case .newAccount, .accounts, .getBalance, .sendTransaction, .getTransactionCount:
             return URLEncoding.queryString
         }
         
@@ -66,17 +72,23 @@ extension MyApi: TargetType {
             params["address"] = address
             
             return params
+        case .sendTransaction(let from, let to, let value, let passwd):
+            params["password"] = passwd
+            params["from"] = from
+            params["to"] = to
+            params["value"] = value
+            
+            return params
+            
+        case .getTransactionCount(let addr):
+            params["address"] = addr
+            
+            return params
         }
     }
     
     var headers: [String : String]? {
         return ["Content-Type": "application/x-www-form-urlencoded"]
-//        switch self {
-//        case .newAccount:
-//            return ["Content-Type": "application/x-www-form-urlencoded"]
-//        case .accounts:
-//            return ["Content-Type": "application/json"]
-//        }
     }
     
     var sampleData: Data {
@@ -85,7 +97,7 @@ extension MyApi: TargetType {
     
     var task: Task {
         switch self {
-        case .newAccount, .accounts, .getBalance:
+        case .newAccount, .accounts, .getBalance, .sendTransaction, .getTransactionCount:
             if let _ = self.parameters {
                 return .requestParameters(parameters: self.parameters!, encoding: parameterEncoding)
             }

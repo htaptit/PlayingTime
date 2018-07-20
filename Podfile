@@ -24,6 +24,8 @@ target 'Techlab-Coin' do
   pod "Unbox", :inhibit_warnings => true
   pod 'SJSegmentedScrollView', '1.3.8', :inhibit_warnings => true
   pod 'Moya', '~> 11.0', :inhibit_warnings => true
+  pod 'IQKeyboardManagerSwift', :inhibit_warnings => true
+  pod 'SCLAlertView', :inhibit_warnings => true
   # Pods for Techlab-Coin
 
 end

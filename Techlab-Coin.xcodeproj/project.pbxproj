@@ -22,6 +22,9 @@
 		0957DA7220FA53390028766C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0957DA7120FA53390028766C /* Reachability.swift */; };
 		09653C9C20FAD8CC00D3FC5E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 09653C9B20FAD8CC00D3FC5E /* GoogleService-Info.plist */; };
 		09653C9F20FB2F2400D3FC5E /* SocialUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09653C9E20FB2F2400D3FC5E /* SocialUser.swift */; };
+		096AE13C210187D10087C8F8 /* MyApiTransactionCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096AE13B210187D10087C8F8 /* MyApiTransactionCount.swift */; };
+		096AE13E2101A0D40087C8F8 /* MyApiSendTransactionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096AE13D2101A0D40087C8F8 /* MyApiSendTransactionResult.swift */; };
+		096AE1402101A2630087C8F8 /* MyApiInfoTransactionBeforeSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096AE13F2101A2630087C8F8 /* MyApiInfoTransactionBeforeSend.swift */; };
 		097350E520FD8DE90049825D /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097350E420FD8DE90049825D /* UIViewController.swift */; };
 		097350E720FDDB6D0049825D /* MyApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097350E620FDDB6C0049825D /* MyApi.swift */; };
 		09906A2C20E61F8B00C06D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09906A2B20E61F8B00C06D69 /* AppDelegate.swift */; };
@@ -60,6 +63,9 @@
 		0957DA7120FA53390028766C /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		09653C9B20FAD8CC00D3FC5E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		09653C9E20FB2F2400D3FC5E /* SocialUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialUser.swift; sourceTree = "<group>"; };
+		096AE13B210187D10087C8F8 /* MyApiTransactionCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiTransactionCount.swift; sourceTree = "<group>"; };
+		096AE13D2101A0D40087C8F8 /* MyApiSendTransactionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiSendTransactionResult.swift; sourceTree = "<group>"; };
+		096AE13F2101A2630087C8F8 /* MyApiInfoTransactionBeforeSend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiInfoTransactionBeforeSend.swift; sourceTree = "<group>"; };
 		097350E420FD8DE90049825D /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		097350E620FDDB6C0049825D /* MyApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyApi.swift; sourceTree = "<group>"; };
 		09906A2820E61F8B00C06D69 /* Techlab-Coin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Techlab-Coin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +144,9 @@
 				09B69D822100A32500313BBD /* MyApiUser.swift */,
 				09B69D842100A3A700313BBD /* MyApiUsers.swift */,
 				09B69D882100B9AA00313BBD /* MyApiBalance.swift */,
+				096AE13B210187D10087C8F8 /* MyApiTransactionCount.swift */,
+				096AE13D2101A0D40087C8F8 /* MyApiSendTransactionResult.swift */,
+				096AE13F2101A2630087C8F8 /* MyApiInfoTransactionBeforeSend.swift */,
 			);
 			path = Parses;
 			sourceTree = "<group>";
@@ -351,11 +360,13 @@
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONRPCKit/JSONRPCKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SJSegmentedScrollView/SJSegmentedScrollView.framework",
 				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
@@ -376,11 +387,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONRPCKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SJSegmentedScrollView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
@@ -409,10 +422,12 @@
 				09562D5C20EF46B80009A8C0 /* Wallet.swift in Sources */,
 				09906A3E20E6204F00C06D69 /* PriceHistoryViewController.swift in Sources */,
 				097350E720FDDB6D0049825D /* MyApi.swift in Sources */,
+				096AE1402101A2630087C8F8 /* MyApiInfoTransactionBeforeSend.swift in Sources */,
 				097350E520FD8DE90049825D /* UIViewController.swift in Sources */,
 				0957DA6520F903350028766C /* NavigationController.swift in Sources */,
 				090AA05420FC596400065A83 /* UIColor.swift in Sources */,
 				090AA05820FC826800065A83 /* FacebookData.swift in Sources */,
+				096AE13C210187D10087C8F8 /* MyApiTransactionCount.swift in Sources */,
 				0957DA7020FA52F70028766C /* Facebook.swift in Sources */,
 				0957DA6C20FA52BF0028766C /* Gmail.swift in Sources */,
 				09653C9F20FB2F2400D3FC5E /* SocialUser.swift in Sources */,
@@ -426,6 +441,7 @@
 				09C9153220FC88A00038729D /* HeaderViewController.swift in Sources */,
 				0957DA6A20FA16670028766C /* SignInViewController.swift in Sources */,
 				09906A2C20E61F8B00C06D69 /* AppDelegate.swift in Sources */,
+				096AE13E2101A0D40087C8F8 /* MyApiSendTransactionResult.swift in Sources */,
 				09B69D892100B9AA00313BBD /* MyApiBalance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

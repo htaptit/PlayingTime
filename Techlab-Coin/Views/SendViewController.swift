@@ -9,15 +9,24 @@
 import UIKit
 import AVFoundation
 import QRCodeReader
+import SCLAlertView
+import Unbox
 
 class SendViewController: UIViewController, QRCodeReaderViewControllerDelegate {
 
+    @IBOutlet weak var huongdanLabel: UILabel!
+    
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var balance: UILabel!
     @IBOutlet weak var targetAddressTextField: UITextField!
     @IBOutlet weak var amount: UITextField!
     @IBOutlet weak var transactionCost: UILabel!
     
+    @IBOutlet weak var sendButton: UIButton!
+    
+    @IBOutlet weak var errorValue: UILabel!
+    @IBOutlet weak var errorTargetAdd: UILabel!
+    var wallet: Wallet?
     
     lazy var reader: QRCodeReader = QRCodeReader()
     
@@ -36,7 +45,27 @@ class SendViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "Send Form"
+        
         // Do any additional setup after loading the view.
+        self.referenceWallet()
+        self.sendButtonDesign()
+        
+        self.huongdanLabel.text = "- Your balance number is 0 and you can not send it. \n- You need to enter a smaller amount than you have. \n- You need to enter the address of the receiver (QRCode can be used)."
+        self.huongdanLabel.numberOfLines = 0
+    }
+    
+    private func sendButtonDesign() {
+        self.sendButton.layer.cornerRadius = 10.0
+    }
+    
+    private func referenceWallet() {
+        guard let wallet = self.wallet else {
+            return
+        }
+        
+        self.address.text = wallet.name
+        self.balance.text = wallet.balance ?? String(describing: 0)
     }
     
     // MARK: - Actions
@@ -119,4 +148,63 @@ class SendViewController: UIViewController, QRCodeReaderViewControllerDelegate {
         dismiss(animated: true, completion: nil)
     }
 
+    @IBAction func send(_ sender: UIButton) {
+        preparingDataBeforeSend()
+    }
+    
+    private func preparingDataBeforeSend() {
+        if self.validate() {
+            showEdit()
+        } else {
+            
+        }
+    }
+    
+    func showEdit() {
+        self.view.endEditing(true)
+        
+        guard let wallet = self.wallet else {
+            return
+        }
+        
+        let from: String = wallet.address
+        let to: String = self.targetAddressTextField.text!
+        let value: String! = self.amount.text!
+        
+        let appearance = SCLAlertView.SCLAppearance(
+            kTextFieldHeight: 60,
+            showCloseButton: true
+        )
+        let alert = SCLAlertView(appearance: appearance)
+        let txt = alert.addTextField("Enter your password")
+        
+        _ = alert.addButton("Send") {
+            let api = MyApi.sendTransaction(from: from, to: to, value: value, passwd: txt.text!)
+            MyApiAdap.request(target: api, success: { (success) in
+                do {
+                    let data: MyApiSendTransactionResult = try unbox(data: success.data)
+                    
+                    if !data.unlock {
+                        self.showAlertError()
+                    }
+                } catch {
+                    debugPrint("Error !")
+                }
+                
+            }, error: { (error) in
+                debugPrint(error)
+            }) { (fail) in
+                debugPrint(fail)
+            }
+        }
+        _  = alert.showCustom("Please enter your password", subTitle: "--------", color: UIColor(hex: "#16A2A4", alpha: 1.0), icon: #imageLiteral(resourceName: "lock"))
+    }
+    
+    private func showAlertError() {
+        SCLAlertView().showError("Authentication error.", subTitle: "Password not match !")
+    }
+    
+    private func validate() -> Bool {
+        return !self.amount.text!.isEmpty && !self.targetAddressTextField.text!.isEmpty
+    }
 }
