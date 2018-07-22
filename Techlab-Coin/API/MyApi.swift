@@ -19,7 +19,7 @@ enum MyApi {
 
 extension MyApi: TargetType {
     
-    var baseURL: URL { return URL(string: "http://192.168.0.196:9001")! }
+    var baseURL: URL { return URL(string: "http://192.168.1.38:9001")! }
     
     var method: Moya.Method {
         switch self {

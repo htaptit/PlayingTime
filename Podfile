@@ -7,8 +7,8 @@ target 'Techlab-Coin' do
   
   inhibit_all_warnings!
 
-  pod 'JSONRPCKit', :git=> 'https://github.com/bricklife/JSONRPCKit.git', :inhibit_warnings => true
-  pod 'APIKit', :inhibit_warnings => true
+ # pod 'JSONRPCKit', :git=> 'https://github.com/bricklife/JSONRPCKit.git', :inhibit_warnings => true
+ # pod 'APIKit', :inhibit_warnings => true
   #pod 'web3.swift'
   pod 'QRCodeReader.swift', '~> 8.2.0', :inhibit_warnings => true
   pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git', :inhibit_warnings => true
@@ -26,6 +26,8 @@ target 'Techlab-Coin' do
   pod 'Moya', '~> 11.0', :inhibit_warnings => true
   pod 'IQKeyboardManagerSwift', :inhibit_warnings => true
   pod 'SCLAlertView', :inhibit_warnings => true
+  pod 'NVActivityIndicatorView', :inhibit_warnings => true
+  pod 'TweeTextField', :inhibit_warnings => true
   # Pods for Techlab-Coin
 
 end

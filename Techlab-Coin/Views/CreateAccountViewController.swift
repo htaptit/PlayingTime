@@ -7,27 +7,49 @@
 //
 
 import UIKit
+import TweeTextField
+import ChameleonFramework
 
 class CreateAccountViewController: UIViewController {
 
-    @IBOutlet weak var nameTextfield: UITextField!
-    @IBOutlet weak var passwordTextfield: UITextField!
+    @IBOutlet weak var nameTextfield: TweeBorderedTextField!
+    @IBOutlet weak var passwordTextfield: TweeActiveTextField!
     @IBOutlet weak var createButton: UIButton!
+    @IBOutlet weak var email: UILabel!
+    @IBOutlet weak var icnTypeSocial: UIImageView!
     
     @IBOutlet weak var nameErrorLabel: UILabel!
     @IBOutlet weak var passwordErrorLabel: UILabel!
+    @IBOutlet weak var confirmPassword: UILabel!
     
+    @IBOutlet weak var formLabel: UILabel!
     var socialUser: SocialUser?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let user = self.socialUser {
+            
+            self.icnTypeSocial.layer.cornerRadius = 10.0
+            
+            self.email.text = user.email
+            switch user.type {
+            case .gmail:
+                self.icnTypeSocial.image = #imageLiteral(resourceName: "icn_gmail")
+            case .facebook:
+                self.icnTypeSocial.image = #imageLiteral(resourceName: "icn_facebook")
+            default:
+                self.icnTypeSocial.image = #imageLiteral(resourceName: "icn_twitter")
+            }
+        }
+        
         // Do any additional setup after loading the view.
         self.uiCreateButton()
     }
     
     private func uiCreateButton() {
+        formLabel.textColor = FlatNavyBlue()
         self.createButton.layer.cornerRadius = 10.0
+        self.createButton.backgroundColor = FlatNavyBlue()
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,6 +77,8 @@ class CreateAccountViewController: UIViewController {
                 print(fail)
             }
         }
+    }
+    @IBAction func confirmPasswordChange(_ sender: TweeActiveTextField) {
     }
     
     private func validate() -> Bool {

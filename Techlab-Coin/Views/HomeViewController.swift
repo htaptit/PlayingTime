@@ -54,7 +54,9 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+//        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "bg"))
+        
         // Do any additional setup after loading the view.
         self.setupNavigationBar()
         
@@ -78,6 +80,9 @@ class HomeViewController: UIViewController {
         segmentedViewController.segmentControllers = [walletsTab!, historyTab!]
         
         self.headerViewController?.socialUser = self.socialUser
+        
+        
+        segmentedViewController.segmentedScrollViewColor = .clear
         
         segmentedViewController.headerViewController = self.headerViewController
         
@@ -105,6 +110,7 @@ class HomeViewController: UIViewController {
         segmentedViewController.delegate = self
         
         addChildViewController(segmentedViewController)
+        
         self.view.addSubview(segmentedViewController.view)
         
         var heightNav: CGFloat = 0.0
@@ -154,8 +160,8 @@ class HomeViewController: UIViewController {
         qrImage.addGestureRecognizer(tap)
         
         self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: qrImage)]
-        
-        self.navigationController?.navigationBar.barTintColor = UIColor(hex: "#16A2A4", alpha: 1.0)
+
+        self.navigationController?.view.backgroundColor = UIColor.clear
     }
     
     private func getAccounts() {
@@ -169,6 +175,7 @@ class HomeViewController: UIViewController {
                 
                 self.getBalance {
                     self.walletsTab?.wallets = self.wallets
+                    self.headerViewController?.wallets = self.wallets
                 }
             } catch {
                 

@@ -11,7 +11,7 @@ import UIKit
 
 extension UIViewController {
     func switchRootViewController(animated: Bool, completion: (() -> Void)?) {
-        guard let window = UIApplication.shared.keyWindow else { return }
+        guard let window = UIApplication.shared.keyWindow as? WallpaperWindow else { return }
         if animated {
             UIView.transition(with: window, duration: 0.5, options: .transitionCrossDissolve, animations: {
                 let oldState: Bool = UIView.areAnimationsEnabled

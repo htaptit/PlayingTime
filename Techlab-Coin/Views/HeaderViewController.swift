@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleSignIn
+import ChameleonFramework
 
 class HeaderViewController: UIViewController {
 
@@ -18,21 +19,23 @@ class HeaderViewController: UIViewController {
     
     var socialUser: SocialUser?
     
+    var wallets: [Wallet] = [] {
+        didSet {
+            self.totalAccountLabel.text = String(describing: self.wallets.count)
+            let totalCost = self.wallets.compactMap({ Int($0.balance ?? "0") }).reduce(0, {x, y in x + y})
+            self.totalCostLabel.text = String(describing: totalCost)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         self.setupUI()
     }
 
     func setupUI() {
-        self.createButton.layer.cornerRadius = 10.0
-        self.createButton.layer.borderColor = UIColor.gray.cgColor
-        self.createButton.layer.borderWidth = 0.2
-        
-        self.logoutButton.layer.cornerRadius = 10.0
-        self.logoutButton.layer.borderColor = UIColor.gray.cgColor
-        self.logoutButton.layer.borderWidth = 0.2
+        self.view.backgroundColor = FlatNavyBlue()
     }
     
     override func didReceiveMemoryWarning() {

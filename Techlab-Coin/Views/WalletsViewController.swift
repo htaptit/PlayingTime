@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import APIKit
-import JSONRPCKit
 import SJSegmentedScrollView
 import Unbox
 
@@ -23,9 +21,7 @@ class WalletsViewController: UIViewController {
             }
         }
     }
-    
-//    var users: MyApiUsers?
-    
+
     var isCreateQRCode: Bool = false
     
     override func viewDidLoad() {
@@ -35,9 +31,6 @@ class WalletsViewController: UIViewController {
         
         // Do any additional setup after loading the view, typically from a nib.
         self.configureTableView()
-        
-//        self.getAccounts()
-        
     }
     
     private func configureTableView() {
@@ -49,73 +42,6 @@ class WalletsViewController: UIViewController {
         
         self.tableView.reloadData()
     }
-    
-//    private func getAccounts() {
-//        let target = MyApi.accounts(email: "htaptit@gmail.com", type: 1)
-//
-//        MyApiAdap.request(target: target, success: { (succes) in
-//            do {
-//                let data: MyApiUsers = try unbox(data: succes.data)
-//
-//                self.users = data
-//
-//                self.getBalance {
-//                    self.tableView.reloadData()
-//                }
-//            } catch {
-//
-//            }
-//        }, error: { (error) in
-//            debugPrint(error)
-//        }) { (fail) in
-//            debugPrint(fail)
-//        }
-//
-//    }
-//
-//    private func getBalance(complete: @escaping () -> ()) {
-//        DispatchQueue.global(qos: .userInitiated).async {
-//            let multiTask = DispatchGroup()
-//
-//            var errorOccurred = false
-//
-//            for (index, user) in self.users!.accounts.enumerated() {
-//                multiTask.enter()
-//
-//                MyApiAdap.request(target: MyApi.getBalance(address: user.address), success: { (succes) in
-//                    do {
-//                        let balance: MyApiBalance = try unbox(data: succes.data)
-//
-//                        self.wallets.append(Wallet(name: self.users!.accounts[index].name, datetime: self.users!.accounts[index].datetime, address: self.users!.accounts[index].address, balance: balance.balance))
-//                    } catch {
-//
-//                    }
-//
-//                     multiTask.leave()
-//                }, error: { (error) in
-//
-//                    errorOccurred = true
-//                    multiTask.leave()
-//                }, failure: { (fail) in
-//
-//                    errorOccurred = true
-//                    multiTask.leave()
-//                })
-//
-//                // wait until entered task complete
-//                multiTask.wait()
-//
-//                // breaking out of the loop if an error has occurred
-//                if errorOccurred { break }
-//            }
-//
-//            if !errorOccurred {
-//                DispatchQueue.main.async {
-//                    complete()
-//                }
-//            }
-//        }
-//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

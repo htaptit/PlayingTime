@@ -13,6 +13,8 @@ import Unbox
 
 class SignInViewController: UIViewController {
     
+    @IBOutlet weak var logobg: UIImageView!
+    @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var gmailButton: UIButton!
     @IBOutlet weak var facebookButton: UIButton!
     @IBOutlet weak var twitterButton: UIButton!
@@ -23,19 +25,19 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = FlatWhite()
+        logobg.layer.cornerRadius = 50.0
+        logobg.image = #imageLiteral(resourceName: "logobacgroud")
         
+        logobg.layer.cornerRadius = 65.0 / 2
+        
+        self.gmailButton.layer.cornerRadius = 5.0
         self.gmailButton.backgroundColor = FlatRed()
-        self.gmailButton.layer.cornerRadius = 3.0
-        self.gmailButton.setTitleColor(FlatWhite(), for: .normal)
         
+        self.facebookButton.layer.cornerRadius = 5.0
         self.facebookButton.backgroundColor = FlatBlue()
-        self.facebookButton.layer.cornerRadius = 3.0
-        self.facebookButton.setTitleColor(FlatWhite(), for: .normal)
         
+        self.twitterButton.layer.cornerRadius = 5.0
         self.twitterButton.backgroundColor = FlatSkyBlue()
-        self.twitterButton.layer.cornerRadius = 3.0
-        self.twitterButton.setTitleColor(FlatWhite(), for: .normal)
     }
     
     override func didReceiveMemoryWarning() {
@@ -83,28 +85,23 @@ class SignInViewController: UIViewController {
     
     func transitionToHome() {
         let tabBarController = ESTabBarController()
+
         if let tabBar = tabBarController.tabBar as? ESTabBar {
             tabBar.itemCustomPositioning = .fillIncludeSeparator
+            tabBar.isTranslucent = true
         }
         
         let main = UIStoryboard(name: "Main", bundle: nil)
         
-//        let v1 = main.instantiateViewController(withIdentifier: "WalletsViewController") as! WalletsViewController
-//        let v2 = main.instantiateViewController(withIdentifier: "PriceHistoryViewController") as! PriceHistoryViewController
-        
         let v1 = main.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
         v1.socialUser = self.socialAccount
         
-        v1.tabBarItem = ESTabBarItem.init(title: "Wallet", image: UIImage(named: "wallet"), selectedImage: UIImage(named: "wallet"))
-//        v2.tabBarItem = ESTabBarItem.init(title: "History", image: UIImage(named: "history"), selectedImage: UIImage(named: "history"))
+        v1.tabBarItem = ESTabBarItem.init(title: "Home", image: UIImage(named: "icn_home"), selectedImage: UIImage(named: "icn_home"))
+        
         let n1 = NavigationController.init(rootViewController: v1)
-//        let n2 = NavigationController.init(rootViewController: v2)
-        
-//        v1.title = "Wallet"
-//        v2.title = "History"
-        
+
         tabBarController.viewControllers = [n1]
-        
+
         tabBarController.switchRootViewController(animated: true, completion: nil)
         
     }

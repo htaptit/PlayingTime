@@ -27,13 +27,13 @@
 		096AE1402101A2630087C8F8 /* MyApiInfoTransactionBeforeSend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096AE13F2101A2630087C8F8 /* MyApiInfoTransactionBeforeSend.swift */; };
 		097350E520FD8DE90049825D /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097350E420FD8DE90049825D /* UIViewController.swift */; };
 		097350E720FDDB6D0049825D /* MyApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097350E620FDDB6C0049825D /* MyApi.swift */; };
+		097DE118210337F7004356F1 /* WallpaperWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 097DE117210337F7004356F1 /* WallpaperWindow.swift */; };
 		09906A2C20E61F8B00C06D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09906A2B20E61F8B00C06D69 /* AppDelegate.swift */; };
 		09906A2E20E61F8B00C06D69 /* WalletsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09906A2D20E61F8B00C06D69 /* WalletsViewController.swift */; };
 		09906A3120E61F8B00C06D69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09906A2F20E61F8B00C06D69 /* Main.storyboard */; };
 		09906A3320E61F9000C06D69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09906A3220E61F9000C06D69 /* Assets.xcassets */; };
 		09906A3620E61F9000C06D69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09906A3420E61F9000C06D69 /* LaunchScreen.storyboard */; };
 		09906A3E20E6204F00C06D69 /* PriceHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09906A3D20E6204F00C06D69 /* PriceHistoryViewController.swift */; };
-		09906A4220E6242600C06D69 /* EthServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09906A4120E6242600C06D69 /* EthServiceRequest.swift */; };
 		09B69D832100A32500313BBD /* MyApiUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B69D822100A32500313BBD /* MyApiUser.swift */; };
 		09B69D852100A3A700313BBD /* MyApiUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B69D842100A3A700313BBD /* MyApiUsers.swift */; };
 		09B69D872100B3CF00313BBD /* UnboxerDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B69D862100B3CF00313BBD /* UnboxerDateFormatter.swift */; };
@@ -68,6 +68,7 @@
 		096AE13F2101A2630087C8F8 /* MyApiInfoTransactionBeforeSend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiInfoTransactionBeforeSend.swift; sourceTree = "<group>"; };
 		097350E420FD8DE90049825D /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		097350E620FDDB6C0049825D /* MyApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyApi.swift; sourceTree = "<group>"; };
+		097DE117210337F7004356F1 /* WallpaperWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpaperWindow.swift; sourceTree = "<group>"; };
 		09906A2820E61F8B00C06D69 /* Techlab-Coin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Techlab-Coin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09906A2B20E61F8B00C06D69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09906A2D20E61F8B00C06D69 /* WalletsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletsViewController.swift; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		09906A3520E61F9000C06D69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09906A3720E61F9000C06D69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09906A3D20E6204F00C06D69 /* PriceHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceHistoryViewController.swift; sourceTree = "<group>"; };
-		09906A4120E6242600C06D69 /* EthServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthServiceRequest.swift; sourceTree = "<group>"; };
 		09B69D822100A32500313BBD /* MyApiUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiUser.swift; sourceTree = "<group>"; };
 		09B69D842100A3A700313BBD /* MyApiUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiUsers.swift; sourceTree = "<group>"; };
 		09B69D862100B3CF00313BBD /* UnboxerDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnboxerDateFormatter.swift; sourceTree = "<group>"; };
@@ -181,6 +181,7 @@
 				09906A3220E61F9000C06D69 /* Assets.xcassets */,
 				09906A3420E61F9000C06D69 /* LaunchScreen.storyboard */,
 				09906A3720E61F9000C06D69 /* Info.plist */,
+				097DE117210337F7004356F1 /* WallpaperWindow.swift */,
 			);
 			path = "Techlab-Coin";
 			sourceTree = "<group>";
@@ -207,7 +208,6 @@
 			isa = PBXGroup;
 			children = (
 				097350E620FDDB6C0049825D /* MyApi.swift */,
-				09906A4120E6242600C06D69 /* EthServiceRequest.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -310,13 +310,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Techlab-Coin/Pods-Techlab-Coin-resources.sh",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterShareExtensionUIResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -348,7 +346,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Techlab-Coin/Pods-Techlab-Coin-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/APIKit/APIKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
@@ -361,21 +358,21 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/JSONRPCKit/JSONRPCKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SJSegmentedScrollView/SJSegmentedScrollView.framework",
+				"${BUILT_PRODUCTS_DIR}/TweeTextField/TweeTextField.framework",
 				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Unbox/Unbox.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APIKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
@@ -388,14 +385,15 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONRPCKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SJSegmentedScrollView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TweeTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Unbox.framework",
@@ -428,6 +426,7 @@
 				090AA05420FC596400065A83 /* UIColor.swift in Sources */,
 				090AA05820FC826800065A83 /* FacebookData.swift in Sources */,
 				096AE13C210187D10087C8F8 /* MyApiTransactionCount.swift in Sources */,
+				097DE118210337F7004356F1 /* WallpaperWindow.swift in Sources */,
 				0957DA7020FA52F70028766C /* Facebook.swift in Sources */,
 				0957DA6C20FA52BF0028766C /* Gmail.swift in Sources */,
 				09653C9F20FB2F2400D3FC5E /* SocialUser.swift in Sources */,
@@ -436,7 +435,6 @@
 				09C9153620FCA9D50038729D /* CreateAccountViewController.swift in Sources */,
 				0957DA6E20FA52D90028766C /* Twitter.swift in Sources */,
 				090AA05020FC3DB700065A83 /* HomeViewController.swift in Sources */,
-				09906A4220E6242600C06D69 /* EthServiceRequest.swift in Sources */,
 				09906A2E20E61F8B00C06D69 /* WalletsViewController.swift in Sources */,
 				09C9153220FC88A00038729D /* HeaderViewController.swift in Sources */,
 				0957DA6A20FA16670028766C /* SignInViewController.swift in Sources */,
@@ -588,7 +586,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UT85388U7N;
+				DEVELOPMENT_TEAM = 4G8LPTNB77;
 				INFOPLIST_FILE = "Techlab-Coin/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -608,7 +606,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UT85388U7N;
+				DEVELOPMENT_TEAM = 4G8LPTNB77;
 				INFOPLIST_FILE = "Techlab-Coin/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

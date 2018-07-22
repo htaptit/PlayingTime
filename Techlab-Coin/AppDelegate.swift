@@ -18,11 +18,15 @@ import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
+    var window: UIWindow? = WallpaperWindow()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // config keyboard
+//        UITabBar.appearance().barTintColor = UIColor.clear
+//        UITabBar.appearance().shadowImage = UIImage()
+//        UITabBar.appearance().backgroundImage = UIImage()
         
+        // config keyboard
+//        UITabBar.appearance().barTintColor = .red
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
@@ -39,9 +43,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let vc = main.instantiateViewController(withIdentifier: "SignInViewController") as! SignInViewController
         
-        window                      = UIWindow(frame: UIScreen.main.bounds)
+//        window                      = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController  = vc
-        window?.backgroundColor     = UIColor.white
+//        window?.backgroundColor     = UIColor.white
         window?.makeKeyAndVisible()
         
         return true
