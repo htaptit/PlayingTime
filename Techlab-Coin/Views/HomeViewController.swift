@@ -165,7 +165,7 @@ class HomeViewController: UIViewController {
     }
     
     private func getAccounts() {
-        let target = MyApi.accounts(email: "htaptit@gmail.com", type: 1)
+        let target = MyApi.accounts(email: "htaptit@gmail.com", type: 0)
         
         MyApiAdap.request(target: target, success: { (succes) in
             do {

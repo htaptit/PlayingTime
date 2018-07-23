@@ -12,6 +12,7 @@ import Moya
 enum MyApi {
     case newAccount(passwd: String, name: String, email: String, type: Int)
     case accounts(email: String, type: Int)
+    case unlockAccount(address: String, passwd: String)
     case getBalance(address: String)
     case sendTransaction(from: String, to: String, value: String, passwd: String)
     case getTransactionCount(addr: String)
@@ -19,11 +20,11 @@ enum MyApi {
 
 extension MyApi: TargetType {
     
-    var baseURL: URL { return URL(string: "http://192.168.1.38:9001")! }
+    var baseURL: URL { return URL(string: "http://192.168.0.196:9001")! }
     
     var method: Moya.Method {
         switch self {
-        case .newAccount, .sendTransaction:
+        case .newAccount, .sendTransaction, .unlockAccount:
             return .post
         case .accounts, .getBalance, .getTransactionCount:
             return .get
@@ -42,12 +43,14 @@ extension MyApi: TargetType {
             return "/sendTransaction"
         case .getTransactionCount:
             return "/getTransactionCount"
+        case .unlockAccount:
+            return "/unlockAccount"
         }
     }
     
     var parameterEncoding:ParameterEncoding {
         switch self {
-        case .newAccount, .accounts, .getBalance, .sendTransaction, .getTransactionCount:
+        case .newAccount, .accounts, .getBalance, .sendTransaction, .getTransactionCount, .unlockAccount:
             return URLEncoding.queryString
         }
         
@@ -66,6 +69,11 @@ extension MyApi: TargetType {
         case .accounts(let email, let type):
             params["email"] = email
             params["type"] = type
+            
+            return params
+        case .unlockAccount(let address, let passwd):
+            params["address"] = address
+            params["password"] = passwd
             
             return params
         case .getBalance(let address):
@@ -97,7 +105,7 @@ extension MyApi: TargetType {
     
     var task: Task {
         switch self {
-        case .newAccount, .accounts, .getBalance, .sendTransaction, .getTransactionCount:
+        case .newAccount, .accounts, .getBalance, .sendTransaction, .getTransactionCount, .unlockAccount:
             if let _ = self.parameters {
                 return .requestParameters(parameters: self.parameters!, encoding: parameterEncoding)
             }

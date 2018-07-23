@@ -10,6 +10,7 @@ import UIKit
 import ESTabBarController_swift
 import ChameleonFramework
 import Unbox
+import NVActivityIndicatorView
 
 class SignInViewController: UIViewController {
     
@@ -18,18 +19,15 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var gmailButton: UIButton!
     @IBOutlet weak var facebookButton: UIButton!
     @IBOutlet weak var twitterButton: UIButton!
-    @IBOutlet weak var namePrLabel: UILabel!
     
     var socialAccount: SocialUser?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        logobg.backgroundColor = FlatNavyBlue().withAlphaComponent(0.5)
         logobg.layer.cornerRadius = 50.0
         logobg.image = #imageLiteral(resourceName: "logobacgroud")
-        
-        logobg.layer.cornerRadius = 65.0 / 2
-        
+
         self.gmailButton.layer.cornerRadius = 5.0
         self.gmailButton.backgroundColor = FlatRed()
         
@@ -46,27 +44,33 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func loginByGmail(_ sender: UIButton) {
+        
+        self.gmailButton.loadingIndicator(true)
+        
         GmailClass.sharedInstance().loginWithGmail(viewController: self, successHandler: { (response) in
             self.socialAccount = GmailClass.sharedInstance().gmailUser
-            
+            self.gmailButton.loadingIndicator(false)
             self.transitionToHome()
         }, failHandler: { (failResponse) in
+            self.gmailButton.loadingIndicator(false)
             debugPrint("Gmail error !")
         })
     }
     
     @IBAction func loginByFacebook(_ sender: UIButton) {
+        self.facebookButton.loadingIndicator(true)
         FacebookClass.sharedInstance().loginWithFacebook(viewController: self, successHandler: { (response) in
             guard let fbdata = FacebookClass.sharedInstance().fbData else {return}
             self.socialAccount = SocialUser(name: fbdata.name, email: fbdata.email, cover_url_string: fbdata.profilepic!.absoluteString, type: .facebook)
-            
+            self.facebookButton.loadingIndicator(false)
             self.transitionToHome()
         }) { (fail) in
-            
+            self.facebookButton.loadingIndicator(false)
         }
     }
     
     @IBAction func loginByTwitter(_ sender: UIButton) {
+        self.twitterButton.loadingIndicator(true)
         TwitterClass.sharedInstance().loginWithTwitter(viewController: self, successHandler: { (response) in
             debugPrint("Twitter response : \(response)")
             TwitterClass.sharedInstance().getAccountInfo(userID: "", _data: { (data) in
@@ -75,10 +79,11 @@ class SignInViewController: UIViewController {
                 let twdata: TwitterData = try! unbox(data: dt)
                 
                 self.socialAccount = SocialUser(name: twdata.name, email: twdata.email, cover_url_string: twdata.profile_image_url_https_string!.absoluteString, type: .twitter)
-                
+                self.twitterButton.loadingIndicator(false)
                 self.transitionToHome()
             })
         }, failHandler: { (failResponse) in
+            self.twitterButton.loadingIndicator(false)
             debugPrint("Twitter error !")
         })
     }
@@ -104,5 +109,18 @@ class SignInViewController: UIViewController {
 
         tabBarController.switchRootViewController(animated: true, completion: nil)
         
+    }
+    @IBAction func transitionContactUS(_ sender: Any) {
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let vc = main.instantiateViewController(withIdentifier: "ContactViewController") as! ContactViewController
+        
+        self.present(NavigationController(rootViewController: vc), animated: true, completion: nil)
+    }
+    
+    @IBAction func transitionAbout(_ sender: Any) {
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        let vc = main.instantiateViewController(withIdentifier: "ContactViewController") as! ContactViewController
+        vc.isContact = false
+        self.present(NavigationController(rootViewController: vc), animated: true, completion: nil)
     }
 }

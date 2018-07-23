@@ -25,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        UITabBar.appearance().shadowImage = UIImage()
 //        UITabBar.appearance().backgroundImage = UIImage()
         
+//        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(20.0, -1000.0), for: .default)
+        
         // config keyboard
 //        UITabBar.appearance().barTintColor = .red
         IQKeyboardManager.shared.enable = true

@@ -27,6 +27,7 @@ class CreateAccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         if let user = self.socialUser {
             
             self.icnTypeSocial.layer.cornerRadius = 10.0
@@ -56,7 +57,7 @@ class CreateAccountViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     @IBAction func create(_ sender: Any) {
         guard let _ = self.socialUser else {
             return

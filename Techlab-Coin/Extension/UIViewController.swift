@@ -8,6 +8,31 @@
 
 import Foundation
 import UIKit
+import NVActivityIndicatorView
+
+extension UIViewController: NVActivityIndicatorViewable {
+    func showIndicator(message: String) {
+        let data = ActivityData(size: CGSize(width: 30, height: 30),
+                                message: message,
+                                messageFont: nil,
+                                type: .lineScalePulseOut,
+                                color: nil,
+                                padding: nil,
+                                displayTimeThreshold: nil,
+                                minimumDisplayTime: 0,
+                                backgroundColor: nil,
+                                textColor: nil)
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(data)
+    }
+    
+    func updateIndicator(message: String) {
+        NVActivityIndicatorPresenter.sharedInstance.setMessage(message)
+    }
+    
+    func hideIndicator() {
+        NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+    }
+}
 
 extension UIViewController {
     func switchRootViewController(animated: Bool, completion: (() -> Void)?) {

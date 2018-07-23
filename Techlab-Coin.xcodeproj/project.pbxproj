@@ -11,6 +11,10 @@
 		090AA05420FC596400065A83 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090AA05320FC596400065A83 /* UIColor.swift */; };
 		090AA05620FC716E00065A83 /* TwitterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090AA05520FC716E00065A83 /* TwitterData.swift */; };
 		090AA05820FC826800065A83 /* FacebookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090AA05720FC826800065A83 /* FacebookData.swift */; };
+		0949B2942105645300792D91 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0949B2932105645300792D91 /* Constants.swift */; };
+		0949B29621058CAD00792D91 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0949B29521058CAD00792D91 /* ContactViewController.swift */; };
+		0949B29A2105C24500792D91 /* MyApiUnlockAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0949B2992105C24500792D91 /* MyApiUnlockAccount.swift */; };
+		0949B29C2105CDD900792D91 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0949B29B2105CDD800792D91 /* UIButton.swift */; };
 		09562D5C20EF46B80009A8C0 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09562D5B20EF46B80009A8C0 /* Wallet.swift */; };
 		09562D6020EF4E8E0009A8C0 /* WalletTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09562D5E20EF4E8E0009A8C0 /* WalletTableViewCell.swift */; };
 		09562D6120EF4E8E0009A8C0 /* WalletTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09562D5F20EF4E8E0009A8C0 /* WalletTableViewCell.xib */; };
@@ -52,6 +56,10 @@
 		090AA05320FC596400065A83 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		090AA05520FC716E00065A83 /* TwitterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterData.swift; sourceTree = "<group>"; };
 		090AA05720FC826800065A83 /* FacebookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookData.swift; sourceTree = "<group>"; };
+		0949B2932105645300792D91 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0949B29521058CAD00792D91 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		0949B2992105C24500792D91 /* MyApiUnlockAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiUnlockAccount.swift; sourceTree = "<group>"; };
+		0949B29B2105CDD800792D91 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		09562D5B20EF46B80009A8C0 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		09562D5E20EF4E8E0009A8C0 /* WalletTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTableViewCell.swift; sourceTree = "<group>"; };
 		09562D5F20EF4E8E0009A8C0 /* WalletTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WalletTableViewCell.xib; sourceTree = "<group>"; };
@@ -108,6 +116,7 @@
 				090AA05320FC596400065A83 /* UIColor.swift */,
 				097350E420FD8DE90049825D /* UIViewController.swift */,
 				09B69D862100B3CF00313BBD /* UnboxerDateFormatter.swift */,
+				0949B29B2105CDD800792D91 /* UIButton.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -147,6 +156,7 @@
 				096AE13B210187D10087C8F8 /* MyApiTransactionCount.swift */,
 				096AE13D2101A0D40087C8F8 /* MyApiSendTransactionResult.swift */,
 				096AE13F2101A2630087C8F8 /* MyApiInfoTransactionBeforeSend.swift */,
+				0949B2992105C24500792D91 /* MyApiUnlockAccount.swift */,
 			);
 			path = Parses;
 			sourceTree = "<group>";
@@ -182,6 +192,7 @@
 				09906A3420E61F9000C06D69 /* LaunchScreen.storyboard */,
 				09906A3720E61F9000C06D69 /* Info.plist */,
 				097DE117210337F7004356F1 /* WallpaperWindow.swift */,
+				0949B2932105645300792D91 /* Constants.swift */,
 			);
 			path = "Techlab-Coin";
 			sourceTree = "<group>";
@@ -200,6 +211,7 @@
 				09C9153120FC88A00038729D /* HeaderViewController.swift */,
 				09C9153320FC94DD0038729D /* QRCodeViewController.swift */,
 				09C9153520FCA9D50038729D /* CreateAccountViewController.swift */,
+				0949B29521058CAD00792D91 /* ContactViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,11 +322,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Techlab-Coin/Pods-Techlab-Coin-resources.sh",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterShareExtensionUIResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -358,14 +372,17 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/MarqueeLabel/MarqueeLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/NotificationBannerSwift/NotificationBannerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCodeReader.swift/QRCodeReader.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SJSegmentedScrollView/SJSegmentedScrollView.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/TweeTextField/TweeTextField.framework",
 				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
@@ -385,14 +402,17 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MarqueeLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NotificationBannerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReader.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SJSegmentedScrollView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TweeTextField.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
@@ -412,11 +432,13 @@
 			files = (
 				0957DA7220FA53390028766C /* Reachability.swift in Sources */,
 				09B69D852100A3A700313BBD /* MyApiUsers.swift in Sources */,
+				0949B29A2105C24500792D91 /* MyApiUnlockAccount.swift in Sources */,
 				09C1485120F88FFA0025CC76 /* AccountDetailViewController.swift in Sources */,
 				09B69D832100A32500313BBD /* MyApiUser.swift in Sources */,
 				09B69D872100B3CF00313BBD /* UnboxerDateFormatter.swift in Sources */,
 				09562D6020EF4E8E0009A8C0 /* WalletTableViewCell.swift in Sources */,
 				090AA05620FC716E00065A83 /* TwitterData.swift in Sources */,
+				0949B2942105645300792D91 /* Constants.swift in Sources */,
 				09562D5C20EF46B80009A8C0 /* Wallet.swift in Sources */,
 				09906A3E20E6204F00C06D69 /* PriceHistoryViewController.swift in Sources */,
 				097350E720FDDB6D0049825D /* MyApi.swift in Sources */,
@@ -426,12 +448,14 @@
 				090AA05420FC596400065A83 /* UIColor.swift in Sources */,
 				090AA05820FC826800065A83 /* FacebookData.swift in Sources */,
 				096AE13C210187D10087C8F8 /* MyApiTransactionCount.swift in Sources */,
+				0949B29621058CAD00792D91 /* ContactViewController.swift in Sources */,
 				097DE118210337F7004356F1 /* WallpaperWindow.swift in Sources */,
 				0957DA7020FA52F70028766C /* Facebook.swift in Sources */,
 				0957DA6C20FA52BF0028766C /* Gmail.swift in Sources */,
 				09653C9F20FB2F2400D3FC5E /* SocialUser.swift in Sources */,
 				09C9153420FC94DD0038729D /* QRCodeViewController.swift in Sources */,
 				09C1485320F89C990025CC76 /* SendViewController.swift in Sources */,
+				0949B29C2105CDD900792D91 /* UIButton.swift in Sources */,
 				09C9153620FCA9D50038729D /* CreateAccountViewController.swift in Sources */,
 				0957DA6E20FA52D90028766C /* Twitter.swift in Sources */,
 				090AA05020FC3DB700065A83 /* HomeViewController.swift in Sources */,

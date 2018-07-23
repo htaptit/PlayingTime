@@ -15,6 +15,7 @@ class NavigationController: UINavigationController {
         super.viewDidLoad()
         let appearance = UIBarButtonItem.appearance()
         appearance.setBackButtonTitlePositionAdjustment(UIOffset.init(horizontal: 0.0, vertical: 0.0), for: .default)
+        
         self.navigationBar.isTranslucent = true
         self.navigationBar.barTintColor = FlatNavyBlue()
         #if swift(>=4.0)

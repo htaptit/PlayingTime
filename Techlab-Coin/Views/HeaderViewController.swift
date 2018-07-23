@@ -16,14 +16,19 @@ class HeaderViewController: UIViewController {
     @IBOutlet weak var totalCostLabel: UILabel!
     @IBOutlet weak var createButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var techlabCoinLabel: UILabel!
     
     var socialUser: SocialUser?
     
     var wallets: [Wallet] = [] {
         didSet {
             self.totalAccountLabel.text = String(describing: self.wallets.count)
+            
             let totalCost = self.wallets.compactMap({ Int($0.balance ?? "0") }).reduce(0, {x, y in x + y})
-            self.totalCostLabel.text = String(describing: totalCost)
+            
+            self.totalCostLabel.text = String(describing: totalCost / Constants.Wei / Constants.GWei)
+            
+            self.techlabCoinLabel.text = String(describing: totalCost / Constants.Wei / Constants.GWei / Constants.TCL)
         }
     }
     

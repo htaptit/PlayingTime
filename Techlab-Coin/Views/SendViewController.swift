@@ -11,6 +11,7 @@ import AVFoundation
 import QRCodeReader
 import SCLAlertView
 import Unbox
+import ChameleonFramework
 
 class SendViewController: UIViewController, QRCodeReaderViewControllerDelegate {
 
@@ -57,6 +58,7 @@ class SendViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     
     private func sendButtonDesign() {
         self.sendButton.layer.cornerRadius = 10.0
+        self.sendButton.backgroundColor = FlatRed()
     }
     
     private func referenceWallet() {
@@ -65,7 +67,10 @@ class SendViewController: UIViewController, QRCodeReaderViewControllerDelegate {
         }
         
         self.address.text = wallet.name
-        self.balance.text = wallet.balance ?? String(describing: 0)
+        
+        let balanceGWei = Int(wallet.balance ?? "0")! / Constants.Wei / Constants.GWei
+        
+        self.balance.text = String(describing: balanceGWei)
     }
     
     // MARK: - Actions

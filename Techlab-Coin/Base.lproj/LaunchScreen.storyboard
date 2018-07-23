@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,25 +19,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="msm-L7-IIU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © TMH Techlab" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cY-eQ-dsy">
-                                <rect key="frame" x="10" y="633" width="355" height="19.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="10" y="639" width="355" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="11"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Aa-wj-ngp">
+                                <rect key="frame" x="50" y="120" width="275" height="27.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Techlab coin">
+                                        <attributes>
+                                            <font key="NSFont" size="25" name="MarkerFelt-Thin"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="send" translatesAutoresizingMaskIntoConstraints="NO" id="YSd-7w-XfY">
+                                <rect key="frame" x="137.5" y="228" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="8D7-Az-qJN"/>
+                                    <constraint firstAttribute="width" secondItem="YSd-7w-XfY" secondAttribute="height" multiplier="1:1" id="ZKG-tM-9Ua"/>
+                                    <constraint firstAttribute="width" constant="100" id="dpn-Cq-ZeG"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6Aa-wj-ngp" secondAttribute="trailing" constant="50" id="155-rL-7wB"/>
+                            <constraint firstItem="6Aa-wj-ngp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="MFp-jd-K58"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4cY-eQ-dsy" secondAttribute="trailing" constant="10" id="Mr7-O5-Aer"/>
-                            <constraint firstItem="msm-L7-IIU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tpi-Qo-PUE"/>
-                            <constraint firstItem="msm-L7-IIU" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="U5P-1b-JqY"/>
+                            <constraint firstItem="6Aa-wj-ngp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="gRS-mX-9Kh"/>
+                            <constraint firstItem="YSd-7w-XfY" firstAttribute="top" secondItem="6Aa-wj-ngp" secondAttribute="bottom" constant="80.5" id="gXe-GD-ygr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4cY-eQ-dsy" secondAttribute="bottom" constant="15" id="iUS-mY-uqe"/>
-                            <constraint firstItem="msm-L7-IIU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="pMx-Ne-cHk"/>
-                            <constraint firstItem="msm-L7-IIU" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="qqv-9K-vNh"/>
                             <constraint firstItem="4cY-eQ-dsy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="tsv-Yq-Mp2"/>
+                            <constraint firstItem="YSd-7w-XfY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="wYw-pT-Dhi"/>
+                            <constraint firstItem="6Aa-wj-ngp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="yQr-ov-hoy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -47,6 +67,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bg" width="375" height="667"/>
+        <image name="send" width="64" height="64"/>
     </resources>
 </document>

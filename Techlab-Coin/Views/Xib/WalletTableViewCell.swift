@@ -35,12 +35,9 @@ class WalletTableViewCell: UITableViewCell {
             self.address.textColor = .red
             self.address.adjustsFontSizeToFitWidth = true
             
-            let hexWithout0x = wallet.balance!.replacingOccurrences(of: "0x", with: "", options: .literal, range: nil)
-            if let toUInt = UInt64(hexWithout0x, radix: 16) {
-                self.balance.text = "\(toUInt)"
-            } else {
-                self.balance.text = wallet.balance!
-            }
+            let balanceGWei = Int(wallet.balance ?? "0")! / Constants.Wei / Constants.GWei
+            
+            self.balance.text = "= " + String(describing: balanceGWei)
             
             self.balance.adjustsFontSizeToFitWidth = true
             

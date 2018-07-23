@@ -28,6 +28,7 @@ target 'Techlab-Coin' do
   pod 'SCLAlertView', :inhibit_warnings => true
   pod 'NVActivityIndicatorView', :inhibit_warnings => true
   pod 'TweeTextField', :inhibit_warnings => true
+  pod 'NotificationBannerSwift', :inhibit_warnings => true
   # Pods for Techlab-Coin
 
 end
