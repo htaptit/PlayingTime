@@ -10,6 +10,7 @@ import UIKit
 import SDWebImage
 import SJSegmentedScrollView
 import Unbox
+import GoogleSignIn
 
 class HomeViewController: UIViewController {
     
@@ -54,17 +55,22 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "bg"))
-        
+
         // Do any additional setup after loading the view.
         self.setupNavigationBar()
         
         self.setupSJSEgment()
         
         self.getAccounts()
-        
+        self.automaticallyAdjustsScrollViewInsets = true
         setNeedsStatusBarAppearanceUpdate()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(refresh), name: NSNotification.Name("refresh"), object: nil)
+    }
+    
+    @objc func refresh() {
+        self.wallets = []
+        self.getAccounts()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -81,8 +87,7 @@ class HomeViewController: UIViewController {
         
         self.headerViewController?.socialUser = self.socialUser
         
-        
-        segmentedViewController.segmentedScrollViewColor = .clear
+        segmentedViewController.segmentedScrollViewColor = .white
         
         segmentedViewController.headerViewController = self.headerViewController
         
@@ -117,7 +122,7 @@ class HomeViewController: UIViewController {
         if let height = self.navigationController?.navigationBar.frame.height {
             heightNav = height
         }
-        
+
         let heightStatusBar = UIApplication.shared.statusBarFrame.height
         
         segmentedViewController.view.frame = CGRect(x: 0.0, y: heightNav + heightStatusBar, width: self.view.bounds.width, height: self.view.bounds.height - heightNav - heightStatusBar)
@@ -135,6 +140,10 @@ class HomeViewController: UIViewController {
         
         self.image.layer.cornerRadius = 20
         self.image.clipsToBounds = true
+        
+        self.image.isUserInteractionEnabled = true
+        let tabGuesture = UITapGestureRecognizer(target: self, action: #selector(logout))
+        self.image.addGestureRecognizer(tabGuesture)
         
         switch socialUser.type {
         case .facebook:
@@ -164,8 +173,54 @@ class HomeViewController: UIViewController {
         self.navigationController?.view.backgroundColor = UIColor.clear
     }
     
+    @objc func logout() {
+        let actionSheet: UIAlertController = UIAlertController(title: "Want to sign out?", message: "", preferredStyle: .actionSheet)
+        
+        let cancelActionButton = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            print("Cancel")
+        }
+        
+        actionSheet.addAction(cancelActionButton)
+        
+        let logoutActionButton = UIAlertAction(title: "Sign out", style: .default)
+        { _ in
+            self.logoutAction()
+        }
+        
+        actionSheet.addAction(logoutActionButton)
+        
+        self.present(actionSheet, animated: true, completion: nil)
+    }
+    
+    private func logoutAction() {
+        guard let socialU = self.socialUser else {
+            return
+        }
+        
+        switch socialU.type {
+        case .facebook:
+            FacebookClass.sharedInstance().logoutFromFacebook()
+        case .twitter:
+            TwitterClass.sharedInstance().logoutFromTwitter()
+        default: // gmail
+            GIDSignIn.sharedInstance().signOut()
+        }
+        
+        let main = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let vc = main.instantiateViewController(withIdentifier: "SignInViewController") as? SignInViewController {
+            vc.switchRootViewController(animated: true, completion: nil)
+        }
+    }
+    
     private func getAccounts() {
-        let target = MyApi.accounts(email: "htaptit@gmail.com", type: 0)
+        guard let _ = self.socialUser else {
+            return
+        }
+        
+        self.showIndicator(message: "")
+        
+        let target = MyApi.accounts(email: self.socialUser!.email, type: self.socialUser!.type.rawValue)
         
         MyApiAdap.request(target: target, success: { (succes) in
             do {
@@ -174,16 +229,20 @@ class HomeViewController: UIViewController {
                 self.users = data
                 
                 self.getBalance {
-                    self.walletsTab?.wallets = self.wallets
+                    self.walletsTab?.wallets = self.wallets.reversed()
                     self.headerViewController?.wallets = self.wallets
                 }
+                
             } catch {
                 
             }
+            self.hideIndicator()
         }, error: { (error) in
             debugPrint(error)
+            self.hideIndicator()
         }) { (fail) in
             debugPrint(fail)
+            self.hideIndicator()
         }
         
     }

@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow? = WallpaperWindow()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-//        UITabBar.appearance().barTintColor = UIColor.clear
+        UITabBar.appearance().barTintColor = UIColor.white
 //        UITabBar.appearance().shadowImage = UIImage()
 //        UITabBar.appearance().backgroundImage = UIImage()
         

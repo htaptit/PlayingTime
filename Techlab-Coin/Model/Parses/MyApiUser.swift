@@ -8,11 +8,12 @@
 
 import Foundation
 import Unbox
+import Timepiece
 
 struct MyApiUser {
     let name: String
     let address: String
-    let datetime: Date
+    var datetime: Date
 }
 
 extension MyApiUser: Unboxable {
@@ -20,5 +21,7 @@ extension MyApiUser: Unboxable {
         self.name = try unboxer.unbox(keyPath: "name")
         self.address = try unboxer.unbox(keyPath: "address")
         self.datetime = try unboxer.unbox(keyPath: "datetime", formatter: UnboxDateFormater.date())
+        self.datetime = (self.datetime + 7.hour)!
+        self.datetime = (self.datetime + 6.month)!
     }
 }

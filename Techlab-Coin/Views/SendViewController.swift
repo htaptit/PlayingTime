@@ -12,6 +12,7 @@ import QRCodeReader
 import SCLAlertView
 import Unbox
 import ChameleonFramework
+import TweeTextField
 
 class SendViewController: UIViewController, QRCodeReaderViewControllerDelegate {
 
@@ -48,9 +49,9 @@ class SendViewController: UIViewController, QRCodeReaderViewControllerDelegate {
 
         self.title = "Send Form"
         
+        self.sendButtonDesign()
         // Do any additional setup after loading the view.
         self.referenceWallet()
-        self.sendButtonDesign()
         
         self.huongdanLabel.text = "- Your balance number is 0 and you can not send it. \n- You need to enter a smaller amount than you have. \n- You need to enter the address of the receiver (QRCode can be used)."
         self.huongdanLabel.numberOfLines = 0
@@ -65,12 +66,20 @@ class SendViewController: UIViewController, QRCodeReaderViewControllerDelegate {
         guard let wallet = self.wallet else {
             return
         }
-        
+
         self.address.text = wallet.name
         
-        let balanceGWei = Int(wallet.balance ?? "0")! / Constants.Wei / Constants.GWei
-        
-        self.balance.text = String(describing: balanceGWei)
+        if let balance = wallet.balance, let n = NumberFormatter().number(from: balance.replacingOccurrences(of: ".", with: ",")) as? CGFloat {
+            self.balance.text = String(describing: n)
+            
+            if n == 0.0 {
+                self.sendButton.backgroundColor = FlatGray()
+                self.sendButton.isEnabled = false
+            } else {
+                self.sendButton.backgroundColor = FlatRed()
+                self.sendButton.isEnabled = true
+            }
+        }
     }
     
     // MARK: - Actions
@@ -154,6 +163,8 @@ class SendViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     }
 
     @IBAction func send(_ sender: UIButton) {
+        self.validateAmount()
+        self.validateAddress()
         preparingDataBeforeSend()
     }
     
@@ -174,7 +185,7 @@ class SendViewController: UIViewController, QRCodeReaderViewControllerDelegate {
         
         let from: String = wallet.address
         let to: String = self.targetAddressTextField.text!
-        let value: String! = self.amount.text!
+        let value: String = self.amount.text!
         
         let appearance = SCLAlertView.SCLAppearance(
             kTextFieldHeight: 60,
@@ -182,6 +193,7 @@ class SendViewController: UIViewController, QRCodeReaderViewControllerDelegate {
         )
         let alert = SCLAlertView(appearance: appearance)
         let txt = alert.addTextField("Enter your password")
+        txt.isSecureTextEntry = true
         
         _ = alert.addButton("Send") {
             let api = MyApi.sendTransaction(from: from, to: to, value: value, passwd: txt.text!)
@@ -210,6 +222,79 @@ class SendViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     }
     
     private func validate() -> Bool {
-        return !self.amount.text!.isEmpty && !self.targetAddressTextField.text!.isEmpty
+        return self.errorValue.isHidden && self.errorTargetAdd.isHidden
+    }
+    
+    private func validateAddress() {
+        self.showIndicator(message: "Validating address of target ...")
+        
+        let api = MyApi.checkIsAddress(addr: self.targetAddressTextField.text!)
+        MyApiAdap.request(target: api, success: { (success) in
+            do {
+                let result: MyApiCheckIsAddress = try unbox(data: success.data)
+                if result.isAddress {
+                    self.errorTargetAdd.isHidden = true
+                } else {
+                    self.errorTargetAdd.isHidden = false
+                    self.errorTargetAdd.text = "Address incorrect format"
+                }
+            } catch {
+                
+            }
+            self.hideIndicator()
+        }, error: { (error) in
+            print(error)
+            self.hideIndicator()
+        }) { (fail) in
+            print(fail)
+            self.hideIndicator()
+        }
+    }
+    
+    private func validateAmount() {
+        if let text = self.amount.text, text.isEmpty {
+            self.errorValue.isHidden = false
+            return
+        }
+        
+        self.errorValue.isHidden = true
+    }
+    
+    @IBAction func valueEditing(_ sender: TweeBorderedTextField) {
+        guard let text = sender.text, let _ = NumberFormatter().number(from: text) else {
+            self.errorValue.isHidden = false
+            self.errorValue.text = "Must be a number"
+            return
+        }
+        
+        self.errorValue.isHidden = true
+    }
+    
+    @IBAction func valueEndEditing(_ sender: TweeBorderedTextField) {
+        guard let text = sender.text else {
+            self.errorValue.isHidden = false
+            self.errorValue.text = "Must not be empty"
+            return
+        }
+        
+        if text.isEmpty {
+            self.errorValue.isHidden = false
+            self.errorValue.text = "Must not be empty"
+        } else {
+            if let _ = NumberFormatter().number(from: text) {
+                self.errorValue.isHidden = true
+                self.errorValue.text = "Must be a number"
+                return
+            }
+            
+            self.errorValue.isHidden = false
+        }
+    }
+    
+    
+    @IBAction func targetDidChange(_ sender: TweeBorderedTextField) {
+    }
+    
+    @IBAction func targetDidEnd(_ sender: TweeBorderedTextField) {
     }
 }

@@ -23,12 +23,15 @@ class HeaderViewController: UIViewController {
     var wallets: [Wallet] = [] {
         didSet {
             self.totalAccountLabel.text = String(describing: self.wallets.count)
+            self.totalAccountLabel.setNeedsDisplay()
             
-            let totalCost = self.wallets.compactMap({ Int($0.balance ?? "0") }).reduce(0, {x, y in x + y})
+            let totalCost = self.wallets.compactMap({ CGFloat(truncating: NumberFormatter().number(from: $0.balance?.replacingOccurrences(of: ".", with: ",") ?? "0") ?? 0) }).reduce(0, {x, y in x + y})
             
-            self.totalCostLabel.text = String(describing: totalCost / Constants.Wei / Constants.GWei)
+            self.totalCostLabel.text = String(describing: totalCost)
+            self.totalCostLabel.setNeedsDisplay()
             
-            self.techlabCoinLabel.text = String(describing: totalCost / Constants.Wei / Constants.GWei / Constants.TCL)
+            self.techlabCoinLabel.text = String(describing: totalCost / Constants.TCL)
+            self.techlabCoinLabel.setNeedsDisplay()
         }
     }
     

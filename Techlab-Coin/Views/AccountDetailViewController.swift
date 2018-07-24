@@ -60,13 +60,13 @@ class AccountDetailViewController: UIViewController {
         self.name.text = wallet.name
         self.addressLabel.text = wallet.address
         
-        let balanceGWei = Int(wallet.balance ?? "0")! / Constants.Wei / Constants.GWei
+        if let balance = wallet.balance, let n = NumberFormatter().number(from: balance.replacingOccurrences(of: ".", with: ",")) as? CGFloat {
+            self.balanceLabel.text = String(describing: n)
+            
+            self.usdLabel.text = String(describing: n / Constants.TCL)
+        }
         
-        self.balanceLabel.text = String(describing: balanceGWei)
-        
-        self.usdLabel.text = String(describing: balanceGWei / Constants.TCL)
-        
-        self.createdAtLabel.text = UnboxDateFormater.date(format: "eee MMM dd . hh").string(from: wallet.datetime) + "h"
+        self.createdAtLabel.text = UnboxDateFormater.date(format: "eee MMM dd . HH").string(from: wallet.datetime) + "h"
         
         self.getTransactionCount(address: wallet.address)
     }
@@ -110,6 +110,7 @@ class AccountDetailViewController: UIViewController {
         }
     }
     @IBAction func unlock(_ sender: Any) {
+        self.view.endEditing(true)
         guard let wallet = self.wallet, let passwrd = self.passwordTextfield.text else {
             return
         }
@@ -146,7 +147,7 @@ class AccountDetailViewController: UIViewController {
     }
     
     @IBAction func share(_ sender: Any) {
-        let actionSheet: UIAlertController = UIAlertController(title: "Please select", message: "Share address or QRImage", preferredStyle: .actionSheet)
+        let actionSheet: UIAlertController = UIAlertController(title: "Please select", message: "Share address", preferredStyle: .actionSheet)
         
         let cancelActionButton = UIAlertAction(title: "Cancel", style: .cancel) { _ in
             print("Cancel")

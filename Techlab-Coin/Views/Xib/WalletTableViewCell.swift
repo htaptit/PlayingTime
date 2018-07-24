@@ -35,13 +35,12 @@ class WalletTableViewCell: UITableViewCell {
             self.address.textColor = .red
             self.address.adjustsFontSizeToFitWidth = true
             
-            let balanceGWei = Int(wallet.balance ?? "0")! / Constants.Wei / Constants.GWei
-            
-            self.balance.text = "= " + String(describing: balanceGWei)
+            if let balance = wallet.balance, let n = NumberFormatter().number(from: balance.replacingOccurrences(of: ".", with: ",")) as? CGFloat {
+                self.balance.text = "= " + String(describing: n)
+            }
             
             self.balance.adjustsFontSizeToFitWidth = true
-            
-            self.createdAt.text = UnboxDateFormater.date(format: "eee MMM dd . hh").string(from: wallet.datetime) + "h"
+            self.createdAt.text = UnboxDateFormater.date(format: "eee MMM dd . HH").string(from: wallet.datetime) + "h"
         }
     }
     

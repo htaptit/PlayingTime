@@ -9,6 +9,9 @@
 import UIKit
 import TweeTextField
 import ChameleonFramework
+import Unbox
+import NotificationBannerSwift
+import SCLAlertView
 
 class CreateAccountViewController: UIViewController {
 
@@ -59,6 +62,8 @@ class CreateAccountViewController: UIViewController {
     }
 
     @IBAction func create(_ sender: Any) {
+        self.view.endEditing(true)
+        
         guard let _ = self.socialUser else {
             return
         }
@@ -66,24 +71,55 @@ class CreateAccountViewController: UIViewController {
         self._validate()
         
         if self.validate() {
+            self.showIndicator(message: "")
+            
             let target = MyApi.newAccount(passwd: self.passwordTextfield.text!, name: self.nameTextfield.text!, email: self.socialUser!.email, type: self.socialUser!.type.rawValue)
             
-//            let target = MyApi.accounts
-            debugPrint(target)
             MyApiAdap.request(target: target, success: { (response) in
-                print(response)
+                self.hideIndicator()
+                do {
+                    let newAccount: MyApiNewAccount = try unbox(data: response.data)
+                    
+                    NotificationCenter.default.post(name: NSNotification.Name("refresh"), object: nil)
+                    
+                    self.showAlert(address: newAccount.account)
+                } catch {
+                    
+                }
             }, error: { (error) in
                 print(error)
+                self.hideIndicator()
             }) { (fail) in
                 print(fail)
+                self.hideIndicator()
             }
         }
     }
+    
+    private func showAlert(address: String) {
+        let appearance = SCLAlertView.SCLAppearance(
+            showCloseButton: false
+        )
+        
+        let alertView = SCLAlertView(appearance: appearance)
+        
+        alertView.addButton("Close") {
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        alertView.showSuccess("Created account !", subTitle: address)
+    }
+    
     @IBAction func confirmPasswordChange(_ sender: TweeActiveTextField) {
+        if sender.text! != self.passwordTextfield.text! {
+            self.confirmPassword.isHidden = false
+        } else {
+            self.confirmPassword.isHidden = true
+        }
     }
     
     private func validate() -> Bool {
-        return self.nameErrorLabel.isHidden && self.passwordErrorLabel.isHidden
+        return self.nameErrorLabel.isHidden && self.passwordErrorLabel.isHidden && self.confirmPassword.isHidden
     }
     
     private func _validate() {

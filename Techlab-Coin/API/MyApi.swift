@@ -16,17 +16,18 @@ enum MyApi {
     case getBalance(address: String)
     case sendTransaction(from: String, to: String, value: String, passwd: String)
     case getTransactionCount(addr: String)
+    case checkIsAddress(addr: String)
 }
 
 extension MyApi: TargetType {
     
-    var baseURL: URL { return URL(string: "http://192.168.0.196:9001")! }
+    var baseURL: URL { return URL(string: "http://hoangs-mac-mini.local:9001")! }
     
     var method: Moya.Method {
         switch self {
         case .newAccount, .sendTransaction, .unlockAccount:
             return .post
-        case .accounts, .getBalance, .getTransactionCount:
+        case .accounts, .getBalance, .getTransactionCount, .checkIsAddress:
             return .get
         }
     }
@@ -45,12 +46,14 @@ extension MyApi: TargetType {
             return "/getTransactionCount"
         case .unlockAccount:
             return "/unlockAccount"
+        case .checkIsAddress:
+            return "/checkIsAddress"
         }
     }
     
     var parameterEncoding:ParameterEncoding {
         switch self {
-        case .newAccount, .accounts, .getBalance, .sendTransaction, .getTransactionCount, .unlockAccount:
+        case .newAccount, .accounts, .getBalance, .sendTransaction, .getTransactionCount, .unlockAccount, .checkIsAddress:
             return URLEncoding.queryString
         }
         
@@ -92,6 +95,10 @@ extension MyApi: TargetType {
             params["address"] = addr
             
             return params
+        case .checkIsAddress(let addr):
+            params["address"] = addr
+            
+            return params
         }
     }
     
@@ -105,7 +112,7 @@ extension MyApi: TargetType {
     
     var task: Task {
         switch self {
-        case .newAccount, .accounts, .getBalance, .sendTransaction, .getTransactionCount, .unlockAccount:
+        case .newAccount, .accounts, .getBalance, .sendTransaction, .getTransactionCount, .unlockAccount, .checkIsAddress:
             if let _ = self.parameters {
                 return .requestParameters(parameters: self.parameters!, encoding: parameterEncoding)
             }

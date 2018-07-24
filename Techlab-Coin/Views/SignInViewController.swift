@@ -43,34 +43,40 @@ class SignInViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    private func lockAllButton(_ status: Bool) {
+        self.gmailButton.loadingIndicator(status)
+        self.facebookButton.loadingIndicator(status)
+        self.twitterButton.loadingIndicator(status)
+    }
+    
     @IBAction func loginByGmail(_ sender: UIButton) {
         
-        self.gmailButton.loadingIndicator(true)
+        self.lockAllButton(true)
         
         GmailClass.sharedInstance().loginWithGmail(viewController: self, successHandler: { (response) in
             self.socialAccount = GmailClass.sharedInstance().gmailUser
-            self.gmailButton.loadingIndicator(false)
+            self.lockAllButton(false)
             self.transitionToHome()
         }, failHandler: { (failResponse) in
-            self.gmailButton.loadingIndicator(false)
+            self.lockAllButton(false)
             debugPrint("Gmail error !")
         })
     }
     
     @IBAction func loginByFacebook(_ sender: UIButton) {
-        self.facebookButton.loadingIndicator(true)
+        self.lockAllButton(true)
         FacebookClass.sharedInstance().loginWithFacebook(viewController: self, successHandler: { (response) in
             guard let fbdata = FacebookClass.sharedInstance().fbData else {return}
             self.socialAccount = SocialUser(name: fbdata.name, email: fbdata.email, cover_url_string: fbdata.profilepic!.absoluteString, type: .facebook)
-            self.facebookButton.loadingIndicator(false)
+            self.lockAllButton(false)
             self.transitionToHome()
         }) { (fail) in
-            self.facebookButton.loadingIndicator(false)
+            self.lockAllButton(false)
         }
     }
     
     @IBAction func loginByTwitter(_ sender: UIButton) {
-        self.twitterButton.loadingIndicator(true)
+        self.lockAllButton(true)
         TwitterClass.sharedInstance().loginWithTwitter(viewController: self, successHandler: { (response) in
             debugPrint("Twitter response : \(response)")
             TwitterClass.sharedInstance().getAccountInfo(userID: "", _data: { (data) in
@@ -79,11 +85,11 @@ class SignInViewController: UIViewController {
                 let twdata: TwitterData = try! unbox(data: dt)
                 
                 self.socialAccount = SocialUser(name: twdata.name, email: twdata.email, cover_url_string: twdata.profile_image_url_https_string!.absoluteString, type: .twitter)
-                self.twitterButton.loadingIndicator(false)
+                self.lockAllButton(false)
                 self.transitionToHome()
             })
         }, failHandler: { (failResponse) in
-            self.twitterButton.loadingIndicator(false)
+            self.lockAllButton(false)
             debugPrint("Twitter error !")
         })
     }
@@ -93,7 +99,8 @@ class SignInViewController: UIViewController {
 
         if let tabBar = tabBarController.tabBar as? ESTabBar {
             tabBar.itemCustomPositioning = .fillIncludeSeparator
-            tabBar.isTranslucent = true
+            tabBar.barTintColor = .white
+            tabBar.isTranslucent = false
         }
         
         let main = UIStoryboard(name: "Main", bundle: nil)
