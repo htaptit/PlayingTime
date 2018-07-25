@@ -11,6 +11,13 @@
 		090AA05420FC596400065A83 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090AA05320FC596400065A83 /* UIColor.swift */; };
 		090AA05620FC716E00065A83 /* TwitterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090AA05520FC716E00065A83 /* TwitterData.swift */; };
 		090AA05820FC826800065A83 /* FacebookData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 090AA05720FC826800065A83 /* FacebookData.swift */; };
+		0936FEBD21081CC90004D54B /* SuccessSendTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936FEBC21081CC90004D54B /* SuccessSendTransactionViewController.swift */; };
+		0936FEBF21082EBF0004D54B /* TransactionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936FEBE21082EBF0004D54B /* TransactionDetailViewController.swift */; };
+		0936FEC121083BAF0004D54B /* MyApiTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936FEC021083BAF0004D54B /* MyApiTransaction.swift */; };
+		0936FEC32108448C0004D54B /* MyApiHistories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936FEC22108448C0004D54B /* MyApiHistories.swift */; };
+		0936FEC5210844B70004D54B /* MyApiHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936FEC4210844B70004D54B /* MyApiHistory.swift */; };
+		0936FEC8210847AD0004D54B /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0936FEC6210847AD0004D54B /* HistoryTableViewCell.swift */; };
+		0936FEC9210847AD0004D54B /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0936FEC7210847AD0004D54B /* HistoryTableViewCell.xib */; };
 		0949B2942105645300792D91 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0949B2932105645300792D91 /* Constants.swift */; };
 		0949B29621058CAD00792D91 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0949B29521058CAD00792D91 /* ContactViewController.swift */; };
 		0949B29A2105C24500792D91 /* MyApiUnlockAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0949B2992105C24500792D91 /* MyApiUnlockAccount.swift */; };
@@ -59,6 +66,13 @@
 		090AA05320FC596400065A83 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		090AA05520FC716E00065A83 /* TwitterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterData.swift; sourceTree = "<group>"; };
 		090AA05720FC826800065A83 /* FacebookData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookData.swift; sourceTree = "<group>"; };
+		0936FEBC21081CC90004D54B /* SuccessSendTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessSendTransactionViewController.swift; sourceTree = "<group>"; };
+		0936FEBE21082EBF0004D54B /* TransactionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewController.swift; sourceTree = "<group>"; };
+		0936FEC021083BAF0004D54B /* MyApiTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiTransaction.swift; sourceTree = "<group>"; };
+		0936FEC22108448C0004D54B /* MyApiHistories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiHistories.swift; sourceTree = "<group>"; };
+		0936FEC4210844B70004D54B /* MyApiHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiHistory.swift; sourceTree = "<group>"; };
+		0936FEC6210847AD0004D54B /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		0936FEC7210847AD0004D54B /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		0949B2932105645300792D91 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0949B29521058CAD00792D91 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		0949B2992105C24500792D91 /* MyApiUnlockAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiUnlockAccount.swift; sourceTree = "<group>"; };
@@ -127,6 +141,87 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		0936FECA2108608E0004D54B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				090AA04F20FC3DB700065A83 /* HomeViewController.swift */,
+				09C9153120FC88A00038729D /* HeaderViewController.swift */,
+				0936FECB210860970004D54B /* Tabs */,
+				09562D5D20EF4E7C0009A8C0 /* Xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		0936FECB210860970004D54B /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				09906A2D20E61F8B00C06D69 /* WalletsViewController.swift */,
+				09906A3D20E6204F00C06D69 /* PriceHistoryViewController.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		0936FECC210860A90004D54B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				097DE117210337F7004356F1 /* WallpaperWindow.swift */,
+				0957DA6420F903350028766C /* NavigationController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		0936FECD210860C10004D54B /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				09C1485020F88FFA0025CC76 /* AccountDetailViewController.swift */,
+				09C9153520FCA9D50038729D /* CreateAccountViewController.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		0936FECE210860D30004D54B /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				0936FEBC21081CC90004D54B /* SuccessSendTransactionViewController.swift */,
+				0936FEBE21082EBF0004D54B /* TransactionDetailViewController.swift */,
+				09C1485220F89C990025CC76 /* SendViewController.swift */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		0936FECF210860FA0004D54B /* Constact */ = {
+			isa = PBXGroup;
+			children = (
+				0949B29521058CAD00792D91 /* ContactViewController.swift */,
+			);
+			path = Constact;
+			sourceTree = "<group>";
+		};
+		0936FED0210861190004D54B /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				09C9153320FC94DD0038729D /* QRCodeViewController.swift */,
+				09F1C16321072B070081E2A5 /* ScanBeforeSendViewController.swift */,
+			);
+			path = QRCode;
+			sourceTree = "<group>";
+		};
+		0936FED1210861370004D54B /* Authenticate */ = {
+			isa = PBXGroup;
+			children = (
+				0957DA6920FA16670028766C /* SignInViewController.swift */,
+			);
+			path = Authenticate;
+			sourceTree = "<group>";
+		};
+		0936FED22108614B0004D54B /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				0949B2932105645300792D91 /* Constants.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
 		09562D5A20EF46A60009A8C0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +240,8 @@
 			children = (
 				09562D5E20EF4E8E0009A8C0 /* WalletTableViewCell.swift */,
 				09562D5F20EF4E8E0009A8C0 /* WalletTableViewCell.xib */,
+				0936FEC6210847AD0004D54B /* HistoryTableViewCell.swift */,
+				0936FEC7210847AD0004D54B /* HistoryTableViewCell.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -165,6 +262,9 @@
 				0949B2992105C24500792D91 /* MyApiUnlockAccount.swift */,
 				09F1C15F210702C90081E2A5 /* MyApiNewAccount.swift */,
 				09F1C16121071FB30081E2A5 /* MyApiCheckIsAdress.swift */,
+				0936FEC021083BAF0004D54B /* MyApiTransaction.swift */,
+				0936FEC22108448C0004D54B /* MyApiHistories.swift */,
+				0936FEC4210844B70004D54B /* MyApiHistory.swift */,
 			);
 			path = Parses;
 			sourceTree = "<group>";
@@ -190,6 +290,7 @@
 		09906A2A20E61F8B00C06D69 /* Techlab-Coin */ = {
 			isa = PBXGroup;
 			children = (
+				0936FED22108614B0004D54B /* Constant */,
 				090AA05220FC595600065A83 /* Extension */,
 				09562D5A20EF46A60009A8C0 /* Model */,
 				09906A4020E6235000C06D69 /* API */,
@@ -199,8 +300,6 @@
 				09906A3220E61F9000C06D69 /* Assets.xcassets */,
 				09906A3420E61F9000C06D69 /* LaunchScreen.storyboard */,
 				09906A3720E61F9000C06D69 /* Info.plist */,
-				097DE117210337F7004356F1 /* WallpaperWindow.swift */,
-				0949B2932105645300792D91 /* Constants.swift */,
 			);
 			path = "Techlab-Coin";
 			sourceTree = "<group>";
@@ -208,19 +307,13 @@
 		09906A3F20E6206200C06D69 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0957DA6420F903350028766C /* NavigationController.swift */,
-				09562D5D20EF4E7C0009A8C0 /* Xib */,
-				09906A2D20E61F8B00C06D69 /* WalletsViewController.swift */,
-				09906A3D20E6204F00C06D69 /* PriceHistoryViewController.swift */,
-				09C1485020F88FFA0025CC76 /* AccountDetailViewController.swift */,
-				09C1485220F89C990025CC76 /* SendViewController.swift */,
-				0957DA6920FA16670028766C /* SignInViewController.swift */,
-				090AA04F20FC3DB700065A83 /* HomeViewController.swift */,
-				09C9153120FC88A00038729D /* HeaderViewController.swift */,
-				09C9153320FC94DD0038729D /* QRCodeViewController.swift */,
-				09C9153520FCA9D50038729D /* CreateAccountViewController.swift */,
-				0949B29521058CAD00792D91 /* ContactViewController.swift */,
-				09F1C16321072B070081E2A5 /* ScanBeforeSendViewController.swift */,
+				0936FED1210861370004D54B /* Authenticate */,
+				0936FED0210861190004D54B /* QRCode */,
+				0936FECF210860FA0004D54B /* Constact */,
+				0936FECE210860D30004D54B /* Transaction */,
+				0936FECD210860C10004D54B /* Account */,
+				0936FECC210860A90004D54B /* Common */,
+				0936FECA2108608E0004D54B /* Home */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -315,6 +408,7 @@
 				09906A3620E61F9000C06D69 /* LaunchScreen.storyboard in Resources */,
 				09653C9C20FAD8CC00D3FC5E /* GoogleService-Info.plist in Resources */,
 				09906A3320E61F9000C06D69 /* Assets.xcassets in Resources */,
+				0936FEC9210847AD0004D54B /* HistoryTableViewCell.xib in Resources */,
 				09906A3120E61F8B00C06D69 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,6 +540,7 @@
 				0949B29A2105C24500792D91 /* MyApiUnlockAccount.swift in Sources */,
 				09F1C160210702C90081E2A5 /* MyApiNewAccount.swift in Sources */,
 				09C1485120F88FFA0025CC76 /* AccountDetailViewController.swift in Sources */,
+				0936FEC5210844B70004D54B /* MyApiHistory.swift in Sources */,
 				09B69D832100A32500313BBD /* MyApiUser.swift in Sources */,
 				09B69D872100B3CF00313BBD /* UnboxerDateFormatter.swift in Sources */,
 				09562D6020EF4E8E0009A8C0 /* WalletTableViewCell.swift in Sources */,
@@ -457,8 +552,12 @@
 				097350E720FDDB6D0049825D /* MyApi.swift in Sources */,
 				096AE1402101A2630087C8F8 /* MyApiInfoTransactionBeforeSend.swift in Sources */,
 				097350E520FD8DE90049825D /* UIViewController.swift in Sources */,
+				0936FEBF21082EBF0004D54B /* TransactionDetailViewController.swift in Sources */,
+				0936FEC32108448C0004D54B /* MyApiHistories.swift in Sources */,
+				0936FEBD21081CC90004D54B /* SuccessSendTransactionViewController.swift in Sources */,
 				09F1C16421072B070081E2A5 /* ScanBeforeSendViewController.swift in Sources */,
 				0957DA6520F903350028766C /* NavigationController.swift in Sources */,
+				0936FEC121083BAF0004D54B /* MyApiTransaction.swift in Sources */,
 				090AA05420FC596400065A83 /* UIColor.swift in Sources */,
 				090AA05820FC826800065A83 /* FacebookData.swift in Sources */,
 				096AE13C210187D10087C8F8 /* MyApiTransactionCount.swift in Sources */,
@@ -466,6 +565,7 @@
 				097DE118210337F7004356F1 /* WallpaperWindow.swift in Sources */,
 				0957DA7020FA52F70028766C /* Facebook.swift in Sources */,
 				0957DA6C20FA52BF0028766C /* Gmail.swift in Sources */,
+				0936FEC8210847AD0004D54B /* HistoryTableViewCell.swift in Sources */,
 				09653C9F20FB2F2400D3FC5E /* SocialUser.swift in Sources */,
 				09C9153420FC94DD0038729D /* QRCodeViewController.swift in Sources */,
 				09C1485320F89C990025CC76 /* SendViewController.swift in Sources */,

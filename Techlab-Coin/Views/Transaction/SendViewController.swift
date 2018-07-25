@@ -195,27 +195,60 @@ class SendViewController: UIViewController, QRCodeReaderViewControllerDelegate {
         let txt = alert.addTextField("Enter your password")
         txt.isSecureTextEntry = true
         
-        _ = alert.addButton("Send") {
-            let api = MyApi.sendTransaction(from: from, to: to, value: value, passwd: txt.text!)
-            MyApiAdap.request(target: api, success: { (success) in
-                do {
-                    let data: MyApiSendTransactionResult = try unbox(data: success.data)
-                    
-                    if !data.unlock {
-                        self.showAlertError()
-                    }
-                } catch {
-                    debugPrint("Error !")
-                }
-                
-            }, error: { (error) in
-                debugPrint(error)
-            }) { (fail) in
-                debugPrint(fail)
-            }
+        _ = alert.addButton("Send and wait until done") {
+            self.sendTransaction(from: from, to: to, pasword: txt.text!, value: value, isWait: true)
         }
+        
+        _ = alert.addButton("Send and wait for notification") {
+            self.sendTransaction(from: from, to: to, pasword: txt.text!, value: value)
+        }
+        
+        
+        
+        
         _  = alert.showCustom("Please enter your password", subTitle: "--------", color: UIColor(hex: "#16A2A4", alpha: 1.0), icon: #imageLiteral(resourceName: "lock"))
     }
+    
+    private func sendTransaction(from: String, to: String, pasword: String, value: String, isWait: Bool = false) {
+        if isWait {
+            self.showIndicator(message: "Sending ...")
+        }
+        
+        let api = MyApi.sendTransaction(from: from, to: to, value: value, passwd: pasword)
+        
+        MyApiAdap.request(target: api, success: { (success) in
+            do {
+                let data: MyApiSendTransactionResult = try unbox(data: success.data)
+                
+                if !data.unlock {
+                    self.showAlertError()
+                }
+                
+                NotificationCenter.default.post(name: NSNotification.Name("refreshData"), object: nil)
+                
+                if isWait {
+                    let main = UIStoryboard.init(name: "Main", bundle: nil)
+                    if let vc = main.instantiateViewController(withIdentifier: "SuccessSendTransactionViewController") as? SuccessSendTransactionViewController {
+                        vc.result = data
+                        self.present(vc, animated: true, completion: nil)
+                    }
+                }
+                
+            } catch {
+                debugPrint("Error !")
+            }
+            
+            self.hideIndicator()
+            
+        }, error: { (error) in
+            self.hideIndicator()
+            debugPrint(error)
+        }) { (fail) in
+            self.hideIndicator()
+            debugPrint(fail)
+        }
+    }
+    
     
     private func showAlertError() {
         SCLAlertView().showError("Authentication error.", subTitle: "Password not match !")

@@ -36,7 +36,10 @@ class WalletsViewController: UIViewController {
     private func configureTableView() {
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.tableView.separatorStyle = .none
+//        self.tableView.separatorStyle = .none
+        
+        self.tableView.tableFooterView = UIView()
+        self.tableView.tableHeaderView = UIView()
         
         self.tableView.register(UINib(nibName: "WalletTableViewCell", bundle: nil), forCellReuseIdentifier: "WalletTableViewCell")
         

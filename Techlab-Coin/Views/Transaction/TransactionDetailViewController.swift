@@ -1,15 +1,17 @@
 //
-//  PriceHistoryViewController.swift
+//  TransactionDetailViewController.swift
 //  Techlab-Coin
 //
-//  Created by Hoang Trong Anh on 6/29/18.
+//  Created by Hoang Trong Anh on 7/25/18.
 //  Copyright © 2018 Hoang Trong Anh. All rights reserved.
 //
 
 import UIKit
 
-class PriceHistoryViewController: UIViewController {
+class TransactionDetailViewController: UIViewController {
 
+    var transaction: MyApiTransaction?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

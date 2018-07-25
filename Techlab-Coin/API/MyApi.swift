@@ -17,6 +17,8 @@ enum MyApi {
     case sendTransaction(from: String, to: String, value: String, passwd: String)
     case getTransactionCount(addr: String)
     case checkIsAddress(addr: String)
+    case transactionHistory(email: String, type: Int)
+    case getTransaction(hash: String)
 }
 
 extension MyApi: TargetType {
@@ -27,7 +29,7 @@ extension MyApi: TargetType {
         switch self {
         case .newAccount, .sendTransaction, .unlockAccount:
             return .post
-        case .accounts, .getBalance, .getTransactionCount, .checkIsAddress:
+        case .accounts, .getBalance, .getTransactionCount, .checkIsAddress, .transactionHistory, .getTransaction:
             return .get
         }
     }
@@ -48,12 +50,27 @@ extension MyApi: TargetType {
             return "/unlockAccount"
         case .checkIsAddress:
             return "/checkIsAddress"
+            
+        case .transactionHistory:
+            return "/transactionHistory"
+        case .getTransaction:
+            return "/getTransaction"
         }
     }
     
     var parameterEncoding:ParameterEncoding {
         switch self {
-        case .newAccount, .accounts, .getBalance, .sendTransaction, .getTransactionCount, .unlockAccount, .checkIsAddress:
+            
+        case .newAccount,
+             .accounts,
+             .getBalance,
+             .sendTransaction,
+             .getTransactionCount,
+             .unlockAccount,
+             .checkIsAddress,
+             .transactionHistory,
+             .getTransaction:
+            
             return URLEncoding.queryString
         }
         
@@ -99,6 +116,16 @@ extension MyApi: TargetType {
             params["address"] = addr
             
             return params
+            
+        case .transactionHistory(let email, let type):
+            params["email"] = email
+            params["type"] = type
+            
+            return params
+        case .getTransaction(let hash):
+            params["hash"] = hash
+            
+            return params
         }
     }
     
@@ -112,14 +139,21 @@ extension MyApi: TargetType {
     
     var task: Task {
         switch self {
-        case .newAccount, .accounts, .getBalance, .sendTransaction, .getTransactionCount, .unlockAccount, .checkIsAddress:
+        case .newAccount,
+             .accounts,
+             .getBalance,
+             .sendTransaction,
+             .getTransactionCount,
+             .unlockAccount,
+             .checkIsAddress,
+             .transactionHistory,
+             .getTransaction:
             if let _ = self.parameters {
                 return .requestParameters(parameters: self.parameters!, encoding: parameterEncoding)
             }
             return .requestPlain
         }
     }
-    
 }
 
 struct MyApiAdap {

@@ -230,6 +230,7 @@ class HomeViewController: UIViewController {
                 
                 self.getBalance {
                     self.walletsTab?.wallets = self.wallets.reversed()
+                    self.historyTab?.socialUser = self.socialUser
                     self.headerViewController?.wallets = self.wallets
                 }
                 
