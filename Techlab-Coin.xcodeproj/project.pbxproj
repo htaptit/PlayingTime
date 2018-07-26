@@ -49,6 +49,9 @@
 		09B69D852100A3A700313BBD /* MyApiUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B69D842100A3A700313BBD /* MyApiUsers.swift */; };
 		09B69D872100B3CF00313BBD /* UnboxerDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B69D862100B3CF00313BBD /* UnboxerDateFormatter.swift */; };
 		09B69D892100B9AA00313BBD /* MyApiBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B69D882100B9AA00313BBD /* MyApiBalance.swift */; };
+		09BD1DCB2108D42500146A31 /* AddressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BD1DCA2108D42500146A31 /* AddressesViewController.swift */; };
+		09BD1DCF2108D4AA00146A31 /* AddressSavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BD1DCE2108D4AA00146A31 /* AddressSavedViewController.swift */; };
+		09BD1DD12108D4BD00146A31 /* AddressPopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BD1DD02108D4BD00146A31 /* AddressPopularViewController.swift */; };
 		09C1485120F88FFA0025CC76 /* AccountDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1485020F88FFA0025CC76 /* AccountDetailViewController.swift */; };
 		09C1485320F89C990025CC76 /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C1485220F89C990025CC76 /* SendViewController.swift */; };
 		09C9153220FC88A00038729D /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C9153120FC88A00038729D /* HeaderViewController.swift */; };
@@ -106,6 +109,9 @@
 		09B69D842100A3A700313BBD /* MyApiUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiUsers.swift; sourceTree = "<group>"; };
 		09B69D862100B3CF00313BBD /* UnboxerDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnboxerDateFormatter.swift; sourceTree = "<group>"; };
 		09B69D882100B9AA00313BBD /* MyApiBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiBalance.swift; sourceTree = "<group>"; };
+		09BD1DCA2108D42500146A31 /* AddressesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesViewController.swift; sourceTree = "<group>"; };
+		09BD1DCE2108D4AA00146A31 /* AddressSavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSavedViewController.swift; sourceTree = "<group>"; };
+		09BD1DD02108D4BD00146A31 /* AddressPopularViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressPopularViewController.swift; sourceTree = "<group>"; };
 		09C1485020F88FFA0025CC76 /* AccountDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailViewController.swift; sourceTree = "<group>"; };
 		09C1485220F89C990025CC76 /* SendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
 		09C9153120FC88A00038729D /* HeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = "<group>"; };
@@ -307,6 +313,7 @@
 		09906A3F20E6206200C06D69 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				09BD1DCC2108D44300146A31 /* Address */,
 				0936FED1210861370004D54B /* Authenticate */,
 				0936FED0210861190004D54B /* QRCode */,
 				0936FECF210860FA0004D54B /* Constact */,
@@ -324,6 +331,24 @@
 				097350E620FDDB6C0049825D /* MyApi.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		09BD1DCC2108D44300146A31 /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				09BD1DCD2108D48900146A31 /* Tabs */,
+				09BD1DCA2108D42500146A31 /* AddressesViewController.swift */,
+			);
+			path = Address;
+			sourceTree = "<group>";
+		};
+		09BD1DCD2108D48900146A31 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				09BD1DCE2108D4AA00146A31 /* AddressSavedViewController.swift */,
+				09BD1DD02108D4BD00146A31 /* AddressPopularViewController.swift */,
+			);
+			path = Tabs;
 			sourceTree = "<group>";
 		};
 		0D7FB9813658FD25DF75F91A /* Frameworks */ = {
@@ -425,13 +450,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Techlab-Coin/Pods-Techlab-Coin-resources.sh",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
-				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterShareExtensionUIResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -537,13 +560,16 @@
 			files = (
 				0957DA7220FA53390028766C /* Reachability.swift in Sources */,
 				09B69D852100A3A700313BBD /* MyApiUsers.swift in Sources */,
+				09BD1DCF2108D4AA00146A31 /* AddressSavedViewController.swift in Sources */,
 				0949B29A2105C24500792D91 /* MyApiUnlockAccount.swift in Sources */,
 				09F1C160210702C90081E2A5 /* MyApiNewAccount.swift in Sources */,
 				09C1485120F88FFA0025CC76 /* AccountDetailViewController.swift in Sources */,
 				0936FEC5210844B70004D54B /* MyApiHistory.swift in Sources */,
 				09B69D832100A32500313BBD /* MyApiUser.swift in Sources */,
+				09BD1DCB2108D42500146A31 /* AddressesViewController.swift in Sources */,
 				09B69D872100B3CF00313BBD /* UnboxerDateFormatter.swift in Sources */,
 				09562D6020EF4E8E0009A8C0 /* WalletTableViewCell.swift in Sources */,
+				09BD1DD12108D4BD00146A31 /* AddressPopularViewController.swift in Sources */,
 				090AA05620FC716E00065A83 /* TwitterData.swift in Sources */,
 				0949B2942105645300792D91 /* Constants.swift in Sources */,
 				09F1C16221071FB30081E2A5 /* MyApiCheckIsAdress.swift in Sources */,
@@ -744,7 +770,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UT85388U7N;
+				DEVELOPMENT_TEAM = 4G8LPTNB77;
 				INFOPLIST_FILE = "Techlab-Coin/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

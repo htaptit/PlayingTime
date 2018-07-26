@@ -27,7 +27,7 @@ extension PriceHistoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let main = UIStoryboard(name: "Main", bundle: nil)
         if let vc = main.instantiateViewController(withIdentifier: "TransactionDetailViewController") as? TransactionDetailViewController {
-            vc.transaction = nil
+            vc.baseInforTransaction = self.histories?.history[indexPath.row]
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

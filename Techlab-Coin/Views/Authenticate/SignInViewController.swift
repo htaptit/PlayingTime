@@ -100,6 +100,7 @@ class SignInViewController: UIViewController {
         if let tabBar = tabBarController.tabBar as? ESTabBar {
             tabBar.itemCustomPositioning = .fillIncludeSeparator
             tabBar.barTintColor = .white
+            tabBar.tintColor = FlatNavyBlue()
             tabBar.isTranslucent = false
         }
         
@@ -108,11 +109,17 @@ class SignInViewController: UIViewController {
         let v1 = main.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
         v1.socialUser = self.socialAccount
         
-        v1.tabBarItem = ESTabBarItem.init(title: "Home", image: UIImage(named: "icn_home"), selectedImage: UIImage(named: "icn_home"))
+        v1.tabBarItem = ESTabBarItem.init(title: "Home", image: UIImage(named: "icn_home"), selectedImage: UIImage(named: "icn_home_selecter"))
         
         let n1 = NavigationController.init(rootViewController: v1)
 
-        tabBarController.viewControllers = [n1]
+        let v2 = main.instantiateViewController(withIdentifier: "AddressesViewController") as! AddressesViewController
+        
+        v2.tabBarItem = ESTabBarItem.init(title: "Addresses", image: UIImage(named: "icn_address"), selectedImage: UIImage(named: "icn_address_selected"))
+        
+        let n2 = NavigationController.init(rootViewController: v2)
+        
+        tabBarController.viewControllers = [n1, n2]
 
         tabBarController.switchRootViewController(animated: true, completion: nil)
         

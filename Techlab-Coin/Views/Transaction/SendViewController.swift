@@ -22,9 +22,11 @@ class SendViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     @IBOutlet weak var balance: UILabel!
     @IBOutlet weak var targetAddressTextField: UITextField!
     @IBOutlet weak var amount: UITextField!
-    @IBOutlet weak var transactionCost: UILabel!
+    @IBOutlet weak var targetName: UILabel!
     
+    @IBOutlet weak var targetView: UIView!
     @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var saveToContactButton: UIButton!
     
     @IBOutlet weak var errorValue: UILabel!
     @IBOutlet weak var errorTargetAdd: UILabel!
@@ -58,8 +60,12 @@ class SendViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     }
     
     private func sendButtonDesign() {
+        self.targetView.layer.cornerRadius = 25.0
         self.sendButton.layer.cornerRadius = 10.0
         self.sendButton.backgroundColor = FlatRed()
+        
+        self.saveToContactButton.layer.cornerRadius = 25.0
+        self.saveToContactButton.backgroundColor = FlatGreen()
     }
     
     private func referenceWallet() {
@@ -117,6 +123,9 @@ class SendViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func saveToContact(_ sender: UIButton) {
+        
     }
     
     @IBAction func scanQRCode(_ sender: UIButton) {
