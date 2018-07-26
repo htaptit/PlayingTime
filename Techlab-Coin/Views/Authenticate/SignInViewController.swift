@@ -114,6 +114,7 @@ class SignInViewController: UIViewController {
         let n1 = NavigationController.init(rootViewController: v1)
 
         let v2 = main.instantiateViewController(withIdentifier: "AddressesViewController") as! AddressesViewController
+        v2.socail = self.socialAccount
         
         v2.tabBarItem = ESTabBarItem.init(title: "Addresses", image: UIImage(named: "icn_address"), selectedImage: UIImage(named: "icn_address_selected"))
         

@@ -21,7 +21,9 @@ class WalletsViewController: UIViewController {
             }
         }
     }
-
+    
+    var social: SocialUser?
+    
     var isCreateQRCode: Bool = false
     
     override func viewDidLoad() {
@@ -96,6 +98,7 @@ extension WalletsViewController: UITableViewDelegate {
         } else {
             if let vc = main.instantiateViewController(withIdentifier: "AccountDetailViewController") as? AccountDetailViewController {
                 vc.wallet = self.wallets[indexPath.row]
+                vc.social = self.social
                 self.navigationController?.pushViewController(vc, animated: true)
             }
         }

@@ -19,6 +19,11 @@ enum MyApi {
     case checkIsAddress(addr: String)
     case transactionHistory(email: String, type: Int)
     case getTransaction(hash: String)
+    case getContacts(email: String, type: Int)
+    case newContacts(email: String, type: Int, address: String)
+    case getEmailByName(name: String)
+    case getEmailByAddress(address: String)
+    case getNameByAddress(address: String)
 }
 
 extension MyApi: TargetType {
@@ -27,9 +32,18 @@ extension MyApi: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .newAccount, .sendTransaction, .unlockAccount:
+        case .newAccount, .sendTransaction, .unlockAccount, .newContacts:
             return .post
-        case .accounts, .getBalance, .getTransactionCount, .checkIsAddress, .transactionHistory, .getTransaction:
+        case .accounts,
+             .getBalance,
+             .getTransactionCount,
+             .checkIsAddress,
+             .transactionHistory,
+             .getTransaction,
+             .getContacts,
+             .getEmailByName,
+             .getEmailByAddress,
+             .getNameByAddress:
             return .get
         }
     }
@@ -55,6 +69,17 @@ extension MyApi: TargetType {
             return "/transactionHistory"
         case .getTransaction:
             return "/getTransaction"
+            
+        case .newContacts:
+            return "/newContacts"
+        case .getContacts:
+            return "/getContacts"
+        case .getEmailByName:
+            return "/getEmailByName"
+        case .getEmailByAddress:
+            return "/getEmailByAddress"
+        case .getNameByAddress:
+            return "/getNameByAddress"
         }
     }
     
@@ -69,7 +94,12 @@ extension MyApi: TargetType {
              .unlockAccount,
              .checkIsAddress,
              .transactionHistory,
-             .getTransaction:
+             .getTransaction,
+             .newContacts,
+             .getContacts,
+             .getEmailByName,
+             .getEmailByAddress,
+             .getNameByAddress:
             
             return URLEncoding.queryString
         }
@@ -126,6 +156,32 @@ extension MyApi: TargetType {
             params["hash"] = hash
             
             return params
+
+        case .newContacts(let email, let type, let address):
+            params["email"] = email
+            params["type"] = type
+            params["address"] = address
+            
+            return params
+        case .getContacts(let email, let type):
+            params["email"] = email
+            params["type"] = type
+            
+            return params
+            
+        case .getEmailByName(let name):
+            params["name"] = name
+            
+            return params
+            
+        case .getEmailByAddress(let address):
+            params["address"] = address
+            
+            return params
+        case .getNameByAddress(let address):
+            params["address"] = address
+            
+            return params
         }
     }
     
@@ -147,7 +203,12 @@ extension MyApi: TargetType {
              .unlockAccount,
              .checkIsAddress,
              .transactionHistory,
-             .getTransaction:
+             .getTransaction,
+             .newContacts,
+             .getContacts,
+             .getEmailByName,
+             .getEmailByAddress,
+             .getNameByAddress:
             if let _ = self.parameters {
                 return .requestParameters(parameters: self.parameters!, encoding: parameterEncoding)
             }

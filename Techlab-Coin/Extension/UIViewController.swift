@@ -22,7 +22,7 @@ extension UIViewController: NVActivityIndicatorViewable {
                                 minimumDisplayTime: 0,
                                 backgroundColor: nil,
                                 textColor: nil)
-        NVActivityIndicatorPresenter.sharedInstance.startAnimating(data, nil)
+        NVActivityIndicatorPresenter.sharedInstance.startAnimating(data)
     }
     
     func updateIndicator(message: String) {
@@ -30,7 +30,7 @@ extension UIViewController: NVActivityIndicatorViewable {
     }
     
     func hideIndicator() {
-        NVActivityIndicatorPresenter.sharedInstance.stopAnimating(nil)
+        NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
     }
 }
 

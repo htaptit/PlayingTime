@@ -18,6 +18,8 @@ class AccountDetailViewController: UIViewController {
     var accountName: String?
     
     var wallet: Wallet?
+    
+    var social: SocialUser?
 
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
@@ -106,6 +108,7 @@ class AccountDetailViewController: UIViewController {
         let main = UIStoryboard.init(name: "Main", bundle: nil)
         if let vc = main.instantiateViewController(withIdentifier: "SendViewController") as? SendViewController {
             vc.wallet = self.wallet
+            vc.social = self.social
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

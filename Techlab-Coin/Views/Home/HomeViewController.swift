@@ -11,6 +11,7 @@ import SDWebImage
 import SJSegmentedScrollView
 import Unbox
 import GoogleSignIn
+import ChameleonFramework
 
 class HomeViewController: UIViewController {
     
@@ -85,7 +86,13 @@ class HomeViewController: UIViewController {
     func setupSJSEgment() {
         segmentedViewController.segmentControllers = [walletsTab!, historyTab!]
         
+        walletsTab?.social = self.socialUser
+        
         self.headerViewController?.socialUser = self.socialUser
+        
+        segmentedViewController.segmentBackgroundColor = FlatWhite()
+        
+        segmentedViewController.segmentTitleColor = FlatNavyBlue()
         
         segmentedViewController.segmentedScrollViewColor = .white
         
@@ -319,7 +326,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: SJSegmentedViewControllerDelegate {
     func didMoveToPage(_ controller: UIViewController, segment: SJSegmentTab?, index: Int) {
         if self.selectedSegment != nil {
-            self.selectedSegment?.titleColor(UIColor(hex: "#16A2A4", alpha: 1.0))
+            self.selectedSegment?.titleColor(FlatNavyBlue())
         }
         if self.segmentedViewController.segments.count > 0 {
             self.selectedSegment = self.segmentedViewController.segments[index]

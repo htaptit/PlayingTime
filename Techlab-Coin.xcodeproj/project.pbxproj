@@ -49,6 +49,17 @@
 		09B69D852100A3A700313BBD /* MyApiUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B69D842100A3A700313BBD /* MyApiUsers.swift */; };
 		09B69D872100B3CF00313BBD /* UnboxerDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B69D862100B3CF00313BBD /* UnboxerDateFormatter.swift */; };
 		09B69D892100B9AA00313BBD /* MyApiBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B69D882100B9AA00313BBD /* MyApiBalance.swift */; };
+		09BA00CD2109574B0095186C /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA00CB2109574B0095186C /* AddressTableViewCell.swift */; };
+		09BA00CE2109574B0095186C /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BA00CC2109574B0095186C /* AddressTableViewCell.xib */; };
+		09BA00D1210957580095186C /* PopularTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA00CF210957580095186C /* PopularTableViewCell.swift */; };
+		09BA00D2210957580095186C /* PopularTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09BA00D0210957580095186C /* PopularTableViewCell.xib */; };
+		09BA00D421095A390095186C /* MyApiNewConstact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA00D321095A390095186C /* MyApiNewConstact.swift */; };
+		09BA00D621095A4B0095186C /* MyApiConstacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA00D521095A4B0095186C /* MyApiConstacts.swift */; };
+		09BA00D821095B2A0095186C /* MyApiConstact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA00D721095B2A0095186C /* MyApiConstact.swift */; };
+		09BA00DA21095CF70095186C /* MyApiNewContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA00D921095CF70095186C /* MyApiNewContact.swift */; };
+		09BA00DC21095E790095186C /* MyApiParseEmailByName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA00DB21095E790095186C /* MyApiParseEmailByName.swift */; };
+		09BA00EB2109805A0095186C /* MyApiParseEmailByAdress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA00EA2109805A0095186C /* MyApiParseEmailByAdress.swift */; };
+		09BA00ED2109825D0095186C /* MyApiParseNameByAdress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BA00EC2109825D0095186C /* MyApiParseNameByAdress.swift */; };
 		09BD1DCB2108D42500146A31 /* AddressesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BD1DCA2108D42500146A31 /* AddressesViewController.swift */; };
 		09BD1DCF2108D4AA00146A31 /* AddressSavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BD1DCE2108D4AA00146A31 /* AddressSavedViewController.swift */; };
 		09BD1DD12108D4BD00146A31 /* AddressPopularViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BD1DD02108D4BD00146A31 /* AddressPopularViewController.swift */; };
@@ -109,6 +120,17 @@
 		09B69D842100A3A700313BBD /* MyApiUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiUsers.swift; sourceTree = "<group>"; };
 		09B69D862100B3CF00313BBD /* UnboxerDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnboxerDateFormatter.swift; sourceTree = "<group>"; };
 		09B69D882100B9AA00313BBD /* MyApiBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiBalance.swift; sourceTree = "<group>"; };
+		09BA00CB2109574B0095186C /* AddressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
+		09BA00CC2109574B0095186C /* AddressTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
+		09BA00CF210957580095186C /* PopularTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTableViewCell.swift; sourceTree = "<group>"; };
+		09BA00D0210957580095186C /* PopularTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularTableViewCell.xib; sourceTree = "<group>"; };
+		09BA00D321095A390095186C /* MyApiNewConstact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiNewConstact.swift; sourceTree = "<group>"; };
+		09BA00D521095A4B0095186C /* MyApiConstacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiConstacts.swift; sourceTree = "<group>"; };
+		09BA00D721095B2A0095186C /* MyApiConstact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiConstact.swift; sourceTree = "<group>"; };
+		09BA00D921095CF70095186C /* MyApiNewContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiNewContact.swift; sourceTree = "<group>"; };
+		09BA00DB21095E790095186C /* MyApiParseEmailByName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiParseEmailByName.swift; sourceTree = "<group>"; };
+		09BA00EA2109805A0095186C /* MyApiParseEmailByAdress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiParseEmailByAdress.swift; sourceTree = "<group>"; };
+		09BA00EC2109825D0095186C /* MyApiParseNameByAdress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyApiParseNameByAdress.swift; sourceTree = "<group>"; };
 		09BD1DCA2108D42500146A31 /* AddressesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressesViewController.swift; sourceTree = "<group>"; };
 		09BD1DCE2108D4AA00146A31 /* AddressSavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSavedViewController.swift; sourceTree = "<group>"; };
 		09BD1DD02108D4BD00146A31 /* AddressPopularViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressPopularViewController.swift; sourceTree = "<group>"; };
@@ -271,6 +293,13 @@
 				0936FEC021083BAF0004D54B /* MyApiTransaction.swift */,
 				0936FEC22108448C0004D54B /* MyApiHistories.swift */,
 				0936FEC4210844B70004D54B /* MyApiHistory.swift */,
+				09BA00D321095A390095186C /* MyApiNewConstact.swift */,
+				09BA00D521095A4B0095186C /* MyApiConstacts.swift */,
+				09BA00D721095B2A0095186C /* MyApiConstact.swift */,
+				09BA00D921095CF70095186C /* MyApiNewContact.swift */,
+				09BA00DB21095E790095186C /* MyApiParseEmailByName.swift */,
+				09BA00EA2109805A0095186C /* MyApiParseEmailByAdress.swift */,
+				09BA00EC2109825D0095186C /* MyApiParseNameByAdress.swift */,
 			);
 			path = Parses;
 			sourceTree = "<group>";
@@ -333,6 +362,17 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		09BA00CA210957360095186C /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				09BA00CB2109574B0095186C /* AddressTableViewCell.swift */,
+				09BA00CC2109574B0095186C /* AddressTableViewCell.xib */,
+				09BA00CF210957580095186C /* PopularTableViewCell.swift */,
+				09BA00D0210957580095186C /* PopularTableViewCell.xib */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
 		09BD1DCC2108D44300146A31 /* Address */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +385,7 @@
 		09BD1DCD2108D48900146A31 /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
+				09BA00CA210957360095186C /* Xibs */,
 				09BD1DCE2108D4AA00146A31 /* AddressSavedViewController.swift */,
 				09BD1DD02108D4BD00146A31 /* AddressPopularViewController.swift */,
 			);
@@ -434,7 +475,9 @@
 				09653C9C20FAD8CC00D3FC5E /* GoogleService-Info.plist in Resources */,
 				09906A3320E61F9000C06D69 /* Assets.xcassets in Resources */,
 				0936FEC9210847AD0004D54B /* HistoryTableViewCell.xib in Resources */,
+				09BA00CE2109574B0095186C /* AddressTableViewCell.xib in Resources */,
 				09906A3120E61F8B00C06D69 /* Main.storyboard in Resources */,
+				09BA00D2210957580095186C /* PopularTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,11 +493,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Techlab-Coin/Pods-Techlab-Coin-resources.sh",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterKitResources.bundle",
+				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework/TwitterShareExtensionUIResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterKitResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TwitterShareExtensionUIResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -564,6 +609,7 @@
 				0949B29A2105C24500792D91 /* MyApiUnlockAccount.swift in Sources */,
 				09F1C160210702C90081E2A5 /* MyApiNewAccount.swift in Sources */,
 				09C1485120F88FFA0025CC76 /* AccountDetailViewController.swift in Sources */,
+				09BA00D421095A390095186C /* MyApiNewConstact.swift in Sources */,
 				0936FEC5210844B70004D54B /* MyApiHistory.swift in Sources */,
 				09B69D832100A32500313BBD /* MyApiUser.swift in Sources */,
 				09BD1DCB2108D42500146A31 /* AddressesViewController.swift in Sources */,
@@ -571,9 +617,12 @@
 				09562D6020EF4E8E0009A8C0 /* WalletTableViewCell.swift in Sources */,
 				09BD1DD12108D4BD00146A31 /* AddressPopularViewController.swift in Sources */,
 				090AA05620FC716E00065A83 /* TwitterData.swift in Sources */,
+				09BA00DA21095CF70095186C /* MyApiNewContact.swift in Sources */,
 				0949B2942105645300792D91 /* Constants.swift in Sources */,
+				09BA00ED2109825D0095186C /* MyApiParseNameByAdress.swift in Sources */,
 				09F1C16221071FB30081E2A5 /* MyApiCheckIsAdress.swift in Sources */,
 				09562D5C20EF46B80009A8C0 /* Wallet.swift in Sources */,
+				09BA00D821095B2A0095186C /* MyApiConstact.swift in Sources */,
 				09906A3E20E6204F00C06D69 /* PriceHistoryViewController.swift in Sources */,
 				097350E720FDDB6D0049825D /* MyApi.swift in Sources */,
 				096AE1402101A2630087C8F8 /* MyApiInfoTransactionBeforeSend.swift in Sources */,
@@ -586,16 +635,21 @@
 				0936FEC121083BAF0004D54B /* MyApiTransaction.swift in Sources */,
 				090AA05420FC596400065A83 /* UIColor.swift in Sources */,
 				090AA05820FC826800065A83 /* FacebookData.swift in Sources */,
+				09BA00DC21095E790095186C /* MyApiParseEmailByName.swift in Sources */,
 				096AE13C210187D10087C8F8 /* MyApiTransactionCount.swift in Sources */,
 				0949B29621058CAD00792D91 /* ContactViewController.swift in Sources */,
+				09BA00CD2109574B0095186C /* AddressTableViewCell.swift in Sources */,
 				097DE118210337F7004356F1 /* WallpaperWindow.swift in Sources */,
 				0957DA7020FA52F70028766C /* Facebook.swift in Sources */,
 				0957DA6C20FA52BF0028766C /* Gmail.swift in Sources */,
 				0936FEC8210847AD0004D54B /* HistoryTableViewCell.swift in Sources */,
 				09653C9F20FB2F2400D3FC5E /* SocialUser.swift in Sources */,
+				09BA00EB2109805A0095186C /* MyApiParseEmailByAdress.swift in Sources */,
+				09BA00D621095A4B0095186C /* MyApiConstacts.swift in Sources */,
 				09C9153420FC94DD0038729D /* QRCodeViewController.swift in Sources */,
 				09C1485320F89C990025CC76 /* SendViewController.swift in Sources */,
 				0949B29C2105CDD900792D91 /* UIButton.swift in Sources */,
+				09BA00D1210957580095186C /* PopularTableViewCell.swift in Sources */,
 				09C9153620FCA9D50038729D /* CreateAccountViewController.swift in Sources */,
 				0957DA6E20FA52D90028766C /* Twitter.swift in Sources */,
 				090AA05020FC3DB700065A83 /* HomeViewController.swift in Sources */,

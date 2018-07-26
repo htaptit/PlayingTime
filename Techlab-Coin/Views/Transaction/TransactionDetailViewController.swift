@@ -36,6 +36,8 @@ class TransactionDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         exportButton.layer.cornerRadius = 10.0
         exportButton.backgroundColor = FlatSkyBlue()
+        
+        self.getTransaction() 
     }
 
     override func didReceiveMemoryWarning() {

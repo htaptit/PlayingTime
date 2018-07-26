@@ -13,6 +13,7 @@ import SCLAlertView
 import Unbox
 import ChameleonFramework
 import TweeTextField
+import NotificationBannerSwift
 
 class SendViewController: UIViewController, QRCodeReaderViewControllerDelegate {
 
@@ -31,6 +32,8 @@ class SendViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     @IBOutlet weak var errorValue: UILabel!
     @IBOutlet weak var errorTargetAdd: UILabel!
     var wallet: Wallet?
+    
+    var social: SocialUser?
     
     lazy var reader: QRCodeReader = QRCodeReader()
     
@@ -57,6 +60,9 @@ class SendViewController: UIViewController, QRCodeReaderViewControllerDelegate {
         
         self.huongdanLabel.text = "- Your balance number is 0 and you can not send it. \n- You need to enter a smaller amount than you have. \n- You need to enter the address of the receiver (QRCode can be used)."
         self.huongdanLabel.numberOfLines = 0
+        
+        self.saveToContactButton.backgroundColor = FlatGray()
+        self.saveToContactButton.isEnabled = false
     }
     
     private func sendButtonDesign() {
@@ -124,8 +130,37 @@ class SendViewController: UIViewController, QRCodeReaderViewControllerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    var scanAddressResult: String?
+    
     @IBAction func saveToContact(_ sender: UIButton) {
+        guard let targetAdd = self.targetAddressTextField.text else {
+            
+            return
+        }
         
+        let api = MyApi.newContacts(email: self.social!.email, type: self.social!.type.rawValue, address: targetAdd)
+        
+        MyApiAdap.request(target: api, success: { (success) in
+            do {
+                let data: MyApiNewContact = try unbox(data: success.data)
+                
+                if data.saved {
+                    print("Saved")
+                    let banner = NotificationBanner(title: "Saved", subtitle: "You can view in your contact", leftView: nil, rightView: nil, style: BannerStyle.success, colors: nil)
+                    banner.autoDismiss = true
+                    banner.show(bannerPosition: .bottom)
+                    
+                    NotificationCenter.default.post(name: NSNotification.Name("refreshContact"), object: nil)
+                }
+            } catch {
+                
+            }
+        }, error: { (error) in
+            print(error)
+        }) { (fail) in
+            print(fail)
+        }
     }
     
     @IBAction func scanQRCode(_ sender: UIButton) {
@@ -149,6 +184,10 @@ class SendViewController: UIViewController, QRCodeReaderViewControllerDelegate {
     func reader(_ reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
         reader.stopScanning()
         
+        
+        
+        self.getNameByAdress(address: result.value)
+        
         dismiss(animated: true) { [weak self] in
             let alert = UIAlertController(
                 title: "QRCodeReader",
@@ -159,6 +198,28 @@ class SendViewController: UIViewController, QRCodeReaderViewControllerDelegate {
             
             self?.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    private func getNameByAdress(address: String) {
+        let api = MyApi.getNameByAddress(address: address)
+        
+        MyApiAdap.request(target: api, success: { (success) in
+            do {
+                let data: MyApiNameEmailByAdress = try unbox(data: success.data)
+                
+                self.targetName.text = data.name
+                
+                self.saveToContactButton.isEnabled = true
+                self.saveToContactButton.backgroundColor = FlatGreen()
+            } catch {
+                
+            }
+        }, error: { (erorr) in
+            print(erorr)
+        }) { (fail) in
+            print(fail)
+        }
+        
     }
     
     func reader(_ reader: QRCodeReaderViewController, didSwitchCamera newCaptureDevice: AVCaptureDeviceInput) {
